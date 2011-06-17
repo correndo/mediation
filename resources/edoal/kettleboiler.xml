@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY wine "http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#">
+<!ENTITY source "http://correndo.ecs.soton.ac.uk/ontology/source#">
+<!ENTITY target "http://correndo.ecs.soton.ac.uk/ontology/target#">
+<!ENTITY fn "http://www.w3.org/2005/xpath-functions/">
+<!ENTITY vin "http://ontology.deri.org/vin#">
+<!ENTITY proton "http://proton.semanticweb.org/">
+]>
+
+<!-- JE2010: With the "#" in the end, this is parsed (by the RDF parser...) 
+	without it, this is not! -->
+<rdf:RDF xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+	xml:base="http://ecs.soton.ac.uk/om.owl/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ex="http://example.org" xmlns:source="http://correndo.ecs.soton.ac.uk/ontology/source#"
+	xmlns:target="http://correndo.ecs.soton.ac.uk/ontology/target#"
+	xmlns:fn="http://www.w3.org/2005/xpath-functions/" 
+	xmlns:wine="http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#"
+	xmlns:vin="http://ontology.deri.org/vin#" 
+	xmlns:proton="http://proton.semanticweb.org/"
+	xmlns:edoal="http://ns.inria.org/edoal/1.0/#">
+
+	<Alignment rdf:about="http://oms.omwg.org/wine-vin/">
+		<xml>yes</xml>
+		<dc:creator>http://id.ecs.soton.ac.uk/person/10459</dc:creator>
+		<dc:date>2011/06/07</dc:date>
+		<method>manual</method>
+		<purpose>example</purpose>
+		<level>2EDOAL</level>
+		<type>**</type>
+		<onto1>
+			<Ontology rdf:about="&source;">
+				<formalism>
+					<Formalism>
+						<uri>http://www.w3.org/TR/owl-guide/</uri>
+						<name>owl</name>
+					</Formalism>
+				</formalism>
+			</Ontology>
+		</onto1>
+		<onto2>
+			<Ontology rdf:about="&target;">
+				<location>http://correndo.ecs.soton.ac.uk/ontology/target#</location>
+				<formalism>
+					<Formalism>
+						<uri>http://www.w3.org/TR/owl-guide/</uri>
+						<name>owl</name>
+					</Formalism>
+				</formalism>
+			</Ontology>
+		</onto2>
+	<map>
+		<Cell rdf:about="mapKettleBoiler">
+			<entity1>
+				<edoal:Class rdf:about="&source;Kettle" />
+			</entity1>
+			<entity2>
+				<edoal:Class rdf:about="&target;Boiler" />
+			</entity2>
+			<edoal:transformation>
+				<edoal:Transformation edoal:type="o-">
+					<edoal:entity1>
+						<edoal:Property rdf:about="&source;hasTemperature" />
+					</edoal:entity1>
+					<edoal:entity2>
+						<edoal:Apply edoal:operator="&fn;sub">
+							<edoal:arguments rdf:parseType="Collection">
+								<edoal:Property rdf:about="&target;temp" />
+								<!-- JE: maybe it can also be typed with edoal:type="" not sure -->
+								<edoal:Literal edoal:string="273.15" />
+							</edoal:arguments>
+						</edoal:Apply>
+					</edoal:entity2>
+				</edoal:Transformation>
+			</edoal:transformation>
+			<edoal:transformation>
+				<edoal:Transformation edoal:type="o-">
+					<edoal:entity1>
+					<edoal:Apply edoal:operator="&fn;sum">
+							<edoal:arguments rdf:parseType="Collection">
+								<edoal:Property rdf:about="&source;hasTemperature" />
+								<edoal:Literal edoal:string="273.15" />
+							</edoal:arguments>
+						</edoal:Apply>
+					</edoal:entity1>
+					<edoal:entity2>
+						<edoal:Property rdf:about="&target;temp" />
+					</edoal:entity2>
+				</edoal:Transformation>
+			</edoal:transformation>
+			<measure rdf:datatype="&xsd;float">1.0</measure>
+			<relation>Equivalence</relation>
+		</Cell>
+	</map>
+		<map>
+			<Cell rdf:about="MapUserPerson">
+				<entity1>
+					<edoal:Class rdf:about="&source;Person" />
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="&target;User" />
+				</entity2>
+				<measure rdf:datatype="&xsd;float">1.0</measure>
+				<relation>Equivalence</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell rdf:about="MapHasKettleBoiler">
+				<entity1>
+					<edoal:Property rdf:about="&source;hasKettle" />
+				</entity1>
+				<entity2>
+					<edoal:Property rdf:about="&target;boiler" />
+				</entity2>
+				<measure rdf:datatype="&xsd;float">1.0</measure>
+				<relation>Equivalence</relation>
+			</Cell>
+		</map>
+	</Alignment>
+</rdf:RDF>

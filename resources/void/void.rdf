@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://correndo.ecs.soton.ac.uk/void.rdf#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:void="http://rdfs.org/ns/void#">
+
+    <void:Dataset rdf:about="http://kisti.rkbexplorer.com/id/void">
+        <dc:subject rdf:resource="http://dbpedia.org/resource/Computer_science"/>
+        <dc:subject rdf:resource="http://dbpedia.org/resource/Journal"/>
+        <dc:subject rdf:resource="http://dbpedia.org/resource/Proceedings"/>
+        <rdfs:label>KISTI RKB dataset</rdfs:label>
+        <void:sparqlEndpoint resource="http://kisti.rkbexplorer.com/sparql/"/>
+    </void:Dataset>
+</rdf:RDF>

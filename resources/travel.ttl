@@ -1,0 +1,371 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://knowledgeweb.semanticweb.org/heterogeneity/alignment#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix omwg: <http://www.omwg.org/TR/d7/ontology/alignment/> .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#amount>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#cost> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#arrival_date>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#arrival_time>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#cost>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#currency>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#date>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#day>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#date> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#departure_date>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#departure_time>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#firstName>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#hour>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#time> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#issuing_terms>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#lastName>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#minutes>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#time> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#month>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#date> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#price>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#terms> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#terms>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#ticket>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#time>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#travel1>
+    :formalism [
+        :name "WSML" ;
+        :uri "http://www.wsmo.org/wsml" ;
+        a :Formalism
+    ] ;
+    :location "http://deri.org/iswc2005tutorial/ontologies/travel1#travel1" ;
+    a :Ontology .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#type>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1#year>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel1#date> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel1_travel1_http://deri.org/iswc2005tutorial/ontologies/travel2_travel2>
+    :level "2OMWG" ;
+    :map :amount-ammount, :arrival_date-arrivalDate, :arrival_time-arrivalTime, :cost-payment, :currency-boolean, :date-date, :day-day, :departure_date-departureDate, :departure_time-departureTime, :firstName-first, :hour-hour, :integer-integer, :issuing_terms-terms, :lastName-last, :minutes-minutes, :month-month, :price-payment, :string-string, :terms-payment, :ticket-bearer, :ticket-name, :ticket-travelVoucher, :time-time, :type-type, :year-year ;
+    :onto1 <http://deri.org/iswc2005tutorial/ontologies/travel1#travel1> ;
+    :onto2 <http://deri.org/iswc2005tutorial/ontologies/travel2#travel2> ;
+    :type "**" ;
+    dc:identifier "http://deri.org/iswc2005tutorial/ontologies/travel1_travel1_http://deri.org/iswc2005tutorial/ontologies/travel2_travel2" ;
+    a :Alignment .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#ammount>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#payment> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#arrivalDate>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#arrivalTime>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#bearer>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#date>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#day>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#date> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#departureDate>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#departureTime>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#first>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#name> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#hour>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#time> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#last>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#name> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#minutes>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#time> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#month>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#date> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#name>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#payment>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#terms>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#time>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#travel2>
+    :formalism [
+        :name "WSML" ;
+        :uri "http://www.wsmo.org/wsml" ;
+        a :Formalism
+    ] ;
+    :location "http://deri.org/iswc2005tutorial/ontologies/travel2#travel2" ;
+    a :Ontology .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher>
+    a omwg:Class .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#type>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    a omwg:Attribute .
+
+<http://deri.org/iswc2005tutorial/ontologies/travel2#year>
+    omwg:domainRestriction <http://deri.org/iswc2005tutorial/ontologies/travel2#date> ;
+    a omwg:Attribute .
+
+:amount-ammount
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#amount> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#ammount> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:arrival_date-arrivalDate
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#arrival_date> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#arrivalDate> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:arrival_time-arrivalTime
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#arrival_time> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#arrivalTime> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:cost-payment
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#cost> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#payment> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:currency-boolean
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#currency> ;
+    :entity2 <http://www.wsmo.org/wsml/wsml-syntax#boolean> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:date-date
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#date> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#date> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:day-day
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#day> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#day> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:departure_date-departureDate
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#departure_date> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#departureDate> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:departure_time-departureTime
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#departure_time> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#departureTime> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:firstName-first
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#firstName> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#first> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:hour-hour
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#hour> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#hour> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:integer-integer
+    :entity1 <http://www.wsmo.org/wsml/wsml-syntax#integer> ;
+    :entity2 <http://www.wsmo.org/wsml/wsml-syntax#integer> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:issuing_terms-terms
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#issuing_terms> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#terms> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:lastName-last
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#lastName> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#last> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:minutes-minutes
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#minutes> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#minutes> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:month-month
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#month> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#month> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:price-payment
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#price> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#payment> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:string-string
+    :entity1 <http://www.wsmo.org/wsml/wsml-syntax#string> ;
+    :entity2 <http://www.wsmo.org/wsml/wsml-syntax#string> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:terms-payment
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#terms> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#payment> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:ticket-bearer
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#bearer> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:ticket-name
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#name> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:ticket-travelVoucher
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#ticket> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#travelVoucher> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:time-time
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#time> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#time> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:type-type
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#type> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#type> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+:year-year
+    :entity1 <http://deri.org/iswc2005tutorial/ontologies/travel1#year> ;
+    :entity2 <http://deri.org/iswc2005tutorial/ontologies/travel2#year> ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+<http://www.wsmo.org/wsml/wsml-syntax#boolean>
+    a omwg:Class .
+
+<http://www.wsmo.org/wsml/wsml-syntax#integer>
+    a omwg:Class .
+
+<http://www.wsmo.org/wsml/wsml-syntax#string>
+    a omwg:Class .
+

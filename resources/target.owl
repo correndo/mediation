@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://correndo.ecs.soton.ac.uk/ontology/target#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://correndo.ecs.soton.ac.uk/ontology/target">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="User"/>
+  <owl:Class rdf:ID="Boiler"/>
+  
+  <owl:ObjectProperty rdf:ID="boiler">
+    <rdfs:domain rdf:resource="#User"/>
+    <rdfs:range rdf:resource="#Boiler"/>
+  </owl:ObjectProperty>
+  
+  
+  <owl:FunctionalProperty rdf:ID="name">
+    <rdfs:domain rdf:resource="#User"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  
+  <owl:FunctionalProperty rdf:ID="street">
+    <rdfs:domain rdf:resource="#User"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  
+  <owl:FunctionalProperty rdf:ID="city">
+    <rdfs:domain rdf:resource="#User"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  
+  <owl:FunctionalProperty rdf:ID="weight">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Boiler"/>
+    <rdfs:comment>Weight in Pounds</rdfs:comment>
+  </owl:FunctionalProperty>
+
+  <owl:FunctionalProperty rdf:ID="temp">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Boiler"/>
+    <rdfs:comment>Temperature in Kelvin</rdfs:comment>
+  </owl:FunctionalProperty>
+
+  <User rdf:ID="Me">
+    <name>Gianluca Correndo</name>
+    <street>170 Hill Lane</street>
+    <city>Southampton</city>
+    
+    <boiler>
+      <Boiler rdf:ID="MyBoiler">
+        <temp rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</temp>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30.0</weight>
+      </Boiler>
+    </boiler>
+  </User>
+  
+  <User rdf:ID="Another">
+    <name>Gianluca Rossi</name>
+    <street>170 Shirley rd.</street>
+    <city>Southampton</city>
+    
+    <boiler>
+      <Boiler rdf:ID="HotBoiler">
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >10.0</weight>
+        <temp rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >3000.0</temp>
+      </Boiler>
+      </boiler>
+      <boiler>
+      <Boiler rdf:ID="FrozenBoiler">
+    <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</weight>
+    <temp rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</temp>
+  </Boiler>
+    </boiler>
+  </User>
+</rdf:RDF>

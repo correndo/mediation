@@ -1,0 +1,535 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:j.0="http://ecs.soton.ac.uk/om.owl#">
+  
+  <j.0:Alignment rdf:about="http://ecs.soton.ac.uk/om.owl#a1">
+    <j.0:hasEntityAlignment>    
+      <j.0:EntityAlignment rdf:about="http://ecs.soton.ac.uk/om.owl#creator-info-alignment">
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A80_1"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-author"/>
+            <rdf:object rdf:nodeID="A82_1"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A80_2"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#hasCreatorInfo"/>
+            <rdf:object rdf:nodeID="A81"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A81"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#hasCreator"/>
+            <rdf:object rdf:nodeID="A82_2"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        
+        <j.0:hasFunctionalDependency> 
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A80_2"/>
+            <rdf:predicate rdf:resource="http://ecs.soton.ac.uk/om.owl#sameas"/>
+            <rdf:object>
+              <rdf:Seq>
+             	<rdf:_1 rdf:nodeID="A80_1"/>
+    			<rdf:_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://kisti.rkbexplorer.com/id/\S*</rdf:_2>
+    		  </rdf:Seq>
+            </rdf:object>
+          </rdf:Statement>
+        </j.0:hasFunctionalDependency>    
+            
+        <j.0:hasFunctionalDependency> 
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A82_2"/>
+            <rdf:predicate rdf:resource="http://ecs.soton.ac.uk/om.owl#sameas"/>
+            <rdf:object>
+              <rdf:Seq>
+             	<rdf:_1 rdf:nodeID="A82_1"/>
+    			<rdf:_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://kisti.rkbexplorer.com/id/\S*</rdf:_2>
+    		  </rdf:Seq>
+            </rdf:object>
+          </rdf:Statement>
+        </j.0:hasFunctionalDependency>  
+            
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Publication-Reference"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Accomplishment"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A1"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Generic-Area-Of-Interest"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A1"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#hasTopicAreaOfAccomplishment"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A2"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/extn#has-abstract"/>
+            <rdf:object rdf:nodeID="A3"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A2"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engAbstractOfAccomplishment"/>
+            <rdf:object rdf:nodeID="A3"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A4"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-pretty-name"/>
+            <rdf:object rdf:nodeID="A5"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A4"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfInstitution"/>
+            <rdf:object rdf:nodeID="A5"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasTargetOntology rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A6"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-web-address"/>
+            <rdf:object rdf:nodeID="A7"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A6"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#urlOfInstitution"/>
+            <rdf:object rdf:nodeID="A7"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A8"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Organization"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A8"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Institution"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A9"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#full-name"/>
+            <rdf:object rdf:nodeID="A10"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A9"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfPerson"/>
+            <rdf:object rdf:nodeID="A10"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        
+        
+        
+        
+        
+        
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A11"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Project"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A11"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Project"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasSourceOntology rdf:resource="http://www.aktors.org/ontology/portal#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A12"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-affiliation"/>
+            <rdf:object rdf:nodeID="A13"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A12"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#hasInstitutionOfCreator"/>
+            <rdf:object rdf:nodeID="A13"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A14"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Person"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A14"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Person"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A17_1"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-title"/>
+            <rdf:object rdf:nodeID="A18"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A17_2"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfAccomplishment"/>
+            <rdf:object rdf:nodeID="A18"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        
+        <j.0:hasFunctionalDependency> 
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A17_1"/>
+            <rdf:predicate rdf:resource="http://ecs.soton.ac.uk/om.owl#sameas"/>
+            <rdf:object>
+              <rdf:Seq>
+             	<rdf:_1 rdf:nodeID="A17_2"/>
+    			<rdf:_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://kisti.rkbexplorer.com/id/\S*</rdf:_2>
+    		  </rdf:Seq>
+            </rdf:object>
+          </rdf:Statement>
+        </j.0:hasFunctionalDependency>
+        
+        
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+  </j.0:Alignment>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <j.0:Alignment  rdf:about="http://ecs.soton.ac.uk/om.owl#a2">
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A19"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#hasInstitutionOfCreator"/>
+            <rdf:object rdf:nodeID="A20"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A19"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-affiliation"/>
+            <rdf:object rdf:nodeID="A20"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A21"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfInstitution"/>
+            <rdf:object rdf:nodeID="A22"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A21"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-pretty-name"/>
+            <rdf:object rdf:nodeID="A22"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A23"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#hasCreatorInfo"/>
+            <rdf:object rdf:nodeID="A24"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A23"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-author"/>
+            <rdf:object rdf:nodeID="A24"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A25"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Project"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A25"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Project"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A26"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#urlOfInstitution"/>
+            <rdf:object rdf:nodeID="A27"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A26"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-web-address"/>
+            <rdf:object rdf:nodeID="A27"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasSourceOntology rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A28"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engAbstractOfAccomplishment"/>
+            <rdf:object rdf:nodeID="A29"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A28"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/extn#has-abstract"/>
+            <rdf:object rdf:nodeID="A29"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A30"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Accomplishment"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A30"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Publication-Reference"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A31"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Person"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A31"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Person"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A32"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#hasTopicAreaOfAccomplishment"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A32"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Generic-Area-Of-Interest"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A33"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfPerson"/>
+            <rdf:object rdf:nodeID="A34"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A33"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#full-name"/>
+            <rdf:object rdf:nodeID="A34"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A35"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#Institution"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A35"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://www.aktors.org/ontology/portal#Organization"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasTargetOntology rdf:resource="http://www.aktors.org/ontology/portal#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A36"/>
+            <rdf:predicate rdf:resource="http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfAccomplishment"/>
+            <rdf:object rdf:nodeID="A37"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A36"/>
+            <rdf:predicate rdf:resource="http://www.aktors.org/ontology/portal#has-title"/>
+            <rdf:object rdf:nodeID="A37"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+  </j.0:Alignment>
+
+  </rdf:RDF>

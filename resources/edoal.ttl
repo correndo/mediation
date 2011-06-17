@@ -1,0 +1,71 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://knowledgeweb.semanticweb.org/heterogeneity/alignment#> .
+@prefix align: <http://knowledgeweb.semanticweb.org/heterogeneity/alignment#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org> .
+@prefix wine: <http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#> .
+@prefix vin: <http://ontology.deri.org/vin#> .
+@prefix proton: <http://proton.semanticweb.org/> .
+@prefix edoal: <http://ns.inria.org/edoal/1.0/#> .
+@prefix O1: <http://onto1.org/> .
+@prefix O2: <http://onto2.org/> .
+
+
+O1:LED a edoal:Class.
+O1:hasColor a edoal:Relation.
+O1:Blue a edoal:Instance.
+O2:BlueLED a edoal:Class.
+
+
+<http://edoal.org/led/>
+    :level "2EDOAL" ;
+    :map <http://edoal.org/led/M1>, <http://edoal.org/led/M2>, <http://edoal.org/led/M3> ;
+    :method "manual" ;
+    :onto1 <http://onto1.org/> ;
+    :onto2 <http://onto2.org/> ;
+    :purpose "example" ;
+    :type "**" ;
+    :xml "yes" ;
+    a :Alignment .
+
+
+<http://edoal.org/led/M1> a :Cell ; :measure "1.0"^^xsd:float ; :relation "Equivalence" ;
+    align:entity1 [
+	    edoal:and [
+		    edoal:onProperty O1:hasColor;
+    	    edoal:comparator xsd:equals;
+		    edoal:value O1:Blue
+	      ] ;
+	    edoal:and O1:LED
+	];
+	align:entity2 O2:BlueLED.
+	    
+O1:Red a edoal:Instance.
+O2:RedLED a edoal:Class.
+
+<http://edoal.org/led/M2> a :Cell ; :measure "1.0"^^xsd:float ; :relation "Equivalence" ;
+	align:entity1  [
+ 		  edoal:and [
+			edoal:onProperty O1:hasColor;
+			edoal:comparator xsd:equals;
+			edoal:value O1:Red
+		  ] ;
+		  edoal:and O1:LED
+		];
+	align:entity2 O2:RedLED.
+	
+O1:Green a edoal:Instance.
+O2:GreenLED a edoal:Class.
+
+<http://edoal.org/led/M3> a :Cell ; :measure "1.0"^^xsd:float ; :relation "Equivalence" ;
+	align:entity1  [
+		  edoal:and [
+			edoal:onProperty O1:hasColor;
+			edoal:comparator xsd:equals;
+			edoal:value O1:Green 
+		  ];
+		edoal:and O1:LED
+	   ];	
+	align:entity2 O2:GreenLED.

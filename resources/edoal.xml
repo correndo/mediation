@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY O1 "http://onto1.org/">
+<!ENTITY O2 "http://onto2.org/">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY wine "http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#">
+<!ENTITY vin "http://ontology.deri.org/vin#">
+<!ENTITY proton "http://proton.semanticweb.org/">
+]>
+
+<rdf:RDF 
+	xmlns:O1="http://onto1.org/" 
+	xmlns:O2="http://onto2.org/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:edoal="http://ns.inria.org/edoal/1.0/#"
+	xmlns:ex="http://example.org" xmlns:proton="http://proton.semanticweb.org/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:vin="http://ontology.deri.org/vin#" xmlns:wine="http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#">
+	<Alignment rdf:about="http://edoal.org/led/">
+		<xml>yes</xml>
+		<dc:creator>http://id.ecs.soton.ac.uk/person/10459</dc:creator>
+		<dc:date>2011/05/17</dc:date>
+		<method>manual</method>
+		<purpose>example</purpose>
+		<level>2EDOAL</level>
+		<type>**</type>
+		<onto1>
+			<Ontology rdf:about="http://edoal.org/O1">
+				<formalism>
+					<Formalism>
+						<uri>http://edoal.org/O1</uri>
+						<name>O1</name>
+					</Formalism>
+				</formalism>
+			</Ontology>
+		</onto1>
+		<onto2>
+			<Ontology rdf:about="http://edoal.org/O2">
+				<formalism>
+					<Formalism>
+						<uri>http://edoal.org/O2</uri>
+						<name>O2</name>
+					</Formalism>
+				</formalism>
+			</Ontology>
+		</onto2>
+		<map>
+			<Cell rdf:about="http://edoal.org/led/M1">
+				<entity1>
+					<edoal:and>
+					   <edoal:Class rdf:about="&O1;LED" />
+					</edoal:and>
+					<edoal:and>
+						<edoal:comparator rdf:resource="http://www.w3.org/2001/XMLSchema#equals" />
+						<edoal:onProperty rdf:resource="http://onto1.org/hasColor" />
+						<edoal:value rdf:resource="http://onto1.org/Blue" />
+					</edoal:and>
+				</entity1>
+				<entity2 rdf:resource="http://onto2.org/BlueLED" />
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>Equivalence</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell rdf:about="http://edoal.org/led/M2">
+				<entity1>
+					<edoal:Class rdf:about="&O1;LED" />
+					<edoal:and>
+						<edoal:comparator rdf:resource="http://www.w3.org/2001/XMLSchema#equals" />
+						<edoal:onProperty rdf:resource="http://onto1.org/hasColor" />
+						<edoal:value rdf:resource="http://onto1.org/Red" />
+					</edoal:and>
+				</entity1>
+				<entity2 rdf:resource="http://onto2.org/RedLED" />
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>Equivalence</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell rdf:about="http://edoal.org/led/M3">
+				<entity1>
+					<edoal:Class rdf:about="&O1;LED" />
+					<edoal:and>
+						<edoal:comparator rdf:resource="http://www.w3.org/2001/XMLSchema#equals" />
+						<edoal:onProperty rdf:resource="http://onto1.org/hasColor" />
+						<edoal:value rdf:resource="http://onto1.org/Green" />
+					</edoal:and>
+				</entity1>
+				<entity2 rdf:resource="http://onto2.org/GreenLED" />
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>Equivalence</relation>
+			</Cell>
+		</map>
+	</Alignment>
+</rdf:RDF>

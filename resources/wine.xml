@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY wine "http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#">
+<!ENTITY vin "http://ontology.deri.org/vin#">
+<!ENTITY proton "http://proton.semanticweb.org/">
+]>
+
+<!-- JE2010: With the "#" in the end, this is parsed (by the RDF parser...)
+    without it, this is not! -->
+<rdf:RDF xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#" 
+	 xml:base="http://oms.omwg.org/wine-vin/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ex="http://example.org"
+	 xmlns:wine="http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#"
+	 xmlns:vin="http://ontology.deri.org/vin#"
+	 xmlns:proton="http://proton.semanticweb.org/"
+         xmlns:edoal="http://ns.inria.org/edoal/1.0/#">
+  
+  <Alignment rdf:about="http://oms.omwg.org/wine-vin/"> 
+    <xml>yes</xml>
+    <dc:creator>http://www.scharffe.fr/foaf.rdf</dc:creator>
+    <dc:date>2006/06/07</dc:date>
+    <method>manual</method>
+    <purpose>example</purpose>
+    <level>2EDOAL</level>
+    <type>**</type>    
+    <onto1>
+      <Ontology rdf:about="&wine;">
+      <formalism>
+	<Formalism>
+	 <uri>http://www.w3.org/TR/owl-guide/</uri>
+	 <name>owl</name>
+	</Formalism>
+      </formalism>
+      </Ontology>
+    </onto1> 
+    <onto2>
+      <Ontology rdf:about="&vin;">
+      <location>http://www.scharffe.fr/ontologies/OntologieDuVin.wsml</location>
+      <formalism>
+	<Formalism align:uri="http://www.wsmo.org/wsml/wsml-syntax/wsml-dl"
+		   align:name="wsml" />
+      </formalism>
+      </Ontology>
+    </onto2>
+    <map>
+      <Cell rdf:about="MappingRule_0">
+	<entity1><edoal:Class rdf:about="&wine;VintageYear"/></entity1>
+        <entity2><edoal:Class rdf:about="&vin;Millesime"/></entity2>
+        <measure rdf:datatype="&xsd;float">1.0</measure>
+        <relation>Equivalence</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell rdf:about="MappingRule_1">
+        <entity1><edoal:Property rdf:about="&wine;yearValue"/></entity1>
+        <entity2><edoal:Property rdf:about="&vin;anneeMillesime"/></entity2>
+        <measure rdf:datatype="&xsd;float">1.0</measure>
+        <relation>Equivalence</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell rdf:about="MappingRule_2">
+	<entity1><edoal:Relation rdf:about="&wine;locatedIn"/></entity1>
+        <entity2><edoal:Relation rdf:about="&vin;hasTerroir"/></entity2>
+        <measure rdf:datatype="&xsd;float">1.0</measure>
+        <relation>SubsumedBy</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell rdf:about="MappingRule_3">
+	<entity1><edoal:Class rdf:about="&wine;Bordeaux"/></entity1>
+	<entity2> 
+	  <edoal:Class>
+	    <edoal:and rdf:parseType="Collection">
+	      <edoal:Class rdf:about="&vin;Vin"/>
+	      <edoal:AttributeValueRestriction> 
+		<edoal:onAttribute>
+		  <edoal:Relation>
+		    <edoal:compose rdf:parseType="Collection">
+		      <edoal:Relation rdf:about="&vin;hasTerroir"/>
+		      <edoal:Relation rdf:about="&proton;locatedIn"/>
+		    </edoal:compose>
+		  </edoal:Relation>
+		</edoal:onAttribute>
+		<edoal:comparator rdf:resource="&xsd;equals"/>
+  		<!--edoal:value>loc:Aquitaine</edoal:value-->
+  		<edoal:value><edoal:Instance rdf:about="&vin;Aquitaine"/></edoal:value>
+	      </edoal:AttributeValueRestriction>	  
+	    </edoal:and>
+	  </edoal:Class>
+        </entity2>
+	<measure rdf:datatype='&xsd;float'>1.</measure>
+	<relation>SubsumedBy</relation>
+      </Cell>
+    </map>
+    <map>
+      <Cell rdf:about="MappingRule_4">
+	<entity1>
+ 	  <edoal:Class>
+	    <edoal:or rdf:parseType="Collection">
+	      <edoal:Class rdf:about="&vin;Acidite"/>
+	      <edoal:Class rdf:about="&vin;Astreingence"/>
+	      <edoal:Class rdf:about="&vin;Amertume"/>
+            </edoal:or>
+    	  </edoal:Class>
+	</entity1>
+	<entity2>
+          <edoal:Class>
+            <edoal:not>
+              <edoal:Class rdf:about="&wine;WineFlavor"/>
+	    </edoal:not>
+	  </edoal:Class>
+	</entity2>
+        <measure rdf:datatype='&xsd;float'>1.</measure>
+        <relation>SubsumedBy</relation>
+      </Cell>
+   </map>
+  </Alignment>
+ </rdf:RDF>

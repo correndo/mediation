@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment' 
+	xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' 
+	xmlns:map='http://www.rkbexplorer.com/maps/akt/#'
+	xmlns:xsd='http://www.w3.org/2001/XMLSchema#'>
+
+<Alignment rdf:about='http://www.rkbexplorer.com/maps/akt/kisti'>
+	<xml>yes</xml>
+	<level>0</level>
+	<type>11</type>
+	<onto1>
+		<Ontology rdf:about="http://www.aktors.org/ontology/portal#"/>
+	</onto1>
+	<onto2>
+	    <Ontology rdf:about="http://www.kisti.re.kr/isrl/ResearchRefOntology#"/>
+	</onto2>
+
+	<map:pre>r2p</map:pre>
+ 	<map:post>sup|fha|add|nsr -d</map:post>
+	<!--<uri1>http://www.kisti.re.kr/isrl/ResearchRefOntology#</uri1> -->
+	<uri1>http://www.aktors.org/ontology/portal#</uri1>
+	<uri2>http://kisti.rkbexplorer.com/ontologies/ResearchRefOntology_Ver2.1.owl</uri2>
+	<map>
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#Person'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#Person'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+	
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfPerson'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#full-name'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#Institution'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#Organization'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#urlOfInstitution'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#has-web-address'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfInstitution'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#has-pretty-name'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#hasInstitutionOfCreator'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#has-affiliation'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#Accomplishment'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#Publication-Reference'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+	
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#engNameOfAccomplishment'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/portal#has-title'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	
+		<Cell>
+
+			<entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#engAbstractOfAccomplishment'/>
+			<entity1 rdf:resource='http://www.aktors.org/ontology/extn#has-abstract'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	           <Cell>
+
+                        <entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#hasCreatorInfo'/>
+                        <entity1 rdf:resource='http://www.aktors.org/ontology/portal#has-author'/>
+                        <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+                        <relation>p=</relation>
+                </Cell>
+       
+                <Cell>
+
+                        <entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#hasTopicAreaOfAccomplishment'/>
+                        <entity1 rdf:resource='http://www.aktors.org/ontology/portal#Generic-Area-Of-Interest'/>
+                        <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+                        <relation>c=</relation>
+                </Cell>
+        
+                <Cell>
+
+                        <entity2 rdf:resource='http://www.kisti.re.kr/isrl/ResearchRefOntology#Project'/>
+                        <entity1 rdf:resource='http://www.aktors.org/ontology/portal#Project'/>
+                        <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+                        <relation>c=</relation>
+                </Cell>
+        </map>
+	</Alignment>
+</rdf:RDF>

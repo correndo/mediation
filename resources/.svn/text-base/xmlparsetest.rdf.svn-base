@@ -1,0 +1,249 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://ecs.soton.ac.uk/om.owl#">
+  <j.0:Alignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#hasKettle"/>
+            <rdf:object rdf:nodeID="A1"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#boiler"/>
+            <rdf:object rdf:nodeID="A1"/>
+          </rdf:Statement>
+        </j.0:lhs>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A2"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Kettle"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A2"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#Boiler"/>
+          </rdf:Statement>
+        </j.0:lhs>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A3"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Person"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A3"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#User"/>
+          </rdf:Statement>
+        </j.0:lhs>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasSourceOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#"/>
+    <j.0:hasTargetOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#"/>
+  </j.0:Alignment>
+  <j.0:Alignment>
+    <j.0:hasTargetOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#"/>
+    <j.0:hasSourceOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A4"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#User"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A4"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Person"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A5"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#Boiler"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A5"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Kettle"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A6"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#boiler"/>
+            <rdf:object rdf:nodeID="A7"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A6"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#hasKettle"/>
+            <rdf:object rdf:nodeID="A7"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+  </j.0:Alignment>
+  <j.0:Alignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A8"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#boiler"/>
+            <rdf:object rdf:nodeID="A9"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A8"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#hasKettle"/>
+            <rdf:object rdf:nodeID="A9"/>
+          </rdf:Statement>
+        </j.0:lhs>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A10"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#Boiler"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A10"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Kettle"/>
+          </rdf:Statement>
+        </j.0:lhs>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A11"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#User"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A11"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Person"/>
+          </rdf:Statement>
+        </j.0:lhs>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasTargetDataset rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#dataset"/>
+    <j.0:hasTargetOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#"/>
+    <j.0:hasSourceOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#"/>
+  </j.0:Alignment>
+  <j.0:Alignment>
+    <j.0:hasSourceOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#"/>
+    <j.0:hasTargetOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A12"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Person"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A12"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#User"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A13"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Kettle"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A13"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#Boiler"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A14"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#hasKettle"/>
+            <rdf:object rdf:nodeID="A15"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A14"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#boiler"/>
+            <rdf:object rdf:nodeID="A15"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+  </j.0:Alignment>
+</rdf:RDF>

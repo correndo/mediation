@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://ecs.soton.ac.uk/om.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://ecs.soton.ac.uk/om.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Alignment"/>
+  <owl:Class rdf:ID="EntityRelation">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <EntityRelation rdf:ID="SUB"/>
+          <EntityRelation rdf:ID="EQ"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="EntityAlignment"/>
+  <owl:ObjectProperty rdf:ID="hasSourceOntology">
+    <rdfs:domain rdf:resource="#Alignment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="lhs">
+    <rdfs:domain rdf:resource="#EntityAlignment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTargetDataset">
+    <rdfs:domain rdf:resource="#Alignment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRelation">
+    <rdfs:domain rdf:resource="#EntityAlignment"/>
+    <rdfs:range rdf:resource="#EntityRelation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="rhs">
+    <rdfs:domain rdf:resource="#EntityAlignment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTargetOntology">
+    <rdfs:domain rdf:resource="#Alignment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEntityAlignment">
+    <rdfs:domain rdf:resource="#Alignment"/>
+    <rdfs:range rdf:resource="#EntityAlignment"/>
+  </owl:ObjectProperty>
+</rdf:RDF>

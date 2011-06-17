@@ -1,0 +1,483 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://knowledgeweb.semanticweb.org/heterogeneity/alignment#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org> .
+@prefix wine: <http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#> .
+@prefix vin: <http://ontology.deri.org/vin#> .
+@prefix proton: <http://proton.semanticweb.org/> .
+@prefix edoal: <http://ns.inria.org/edoal/1.0/#> .
+
+<foaf:name>
+    a edoal:Property .
+
+<http://oms.omwg.org/wine-vin/>
+    :level "2EDOAL" ;
+    :map <http://oms.omwg.org/wine-vin/ExtremeTransformationTest>, <http://oms.omwg.org/wine-vin/MappingRule_3>, <http://oms.omwg.org/wine-vin/MappingRule_4>, <http://oms.omwg.org/wine-vin/MappingRule_class_basis>, <http://oms.omwg.org/wine-vin/MappingRule_class_const>, <http://oms.omwg.org/wine-vin/MappingRule_class_quant>, <http://oms.omwg.org/wine-vin/MappingRule_class_rest>, <http://oms.omwg.org/wine-vin/MappingRule_class_values>, <http://oms.omwg.org/wine-vin/MappingRule_inst_basis>, <http://oms.omwg.org/wine-vin/MappingRule_prop_basis>, <http://oms.omwg.org/wine-vin/MappingRule_prop_const>, <http://oms.omwg.org/wine-vin/MappingRule_prop_rest>, <http://oms.omwg.org/wine-vin/MappingRule_rel_basis>, <http://oms.omwg.org/wine-vin/MappingRule_rel_const>, <http://oms.omwg.org/wine-vin/MappingRule_rel_rest>, <http://oms.omwg.org/wine-vin/TransformationTest> ;
+    :method "manual" ;
+    :onto1 <http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#> ;
+    :onto2 <http://ontology.deri.org/vin#> ;
+    :purpose "example" ;
+    :type "**" ;
+    :xml "yes" ;
+    dc:creator "http://www.scharffe.fr/foaf.rdf" ;
+    dc:date "2010/10/10" ;
+    rdf:comment "This is a transformation of total.xml which can be transformed in OWL" ;
+    a :Alignment .
+
+<http://oms.omwg.org/wine-vin/ExtremeTransformationTest>
+    :entity1 [
+        edoal:or "" ;
+        a edoal:Class
+    ] ;
+    :entity2 [
+        edoal:and "" ;
+        a edoal:Class
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    edoal:transformation [
+        edoal:entity1 [
+            edoal:compose "" ;
+            a edoal:Relation
+        ] ;
+        edoal:entity2 [
+            edoal:compose "" ;
+            a edoal:Relation
+        ] ;
+        edoal:type "o-" ;
+        a edoal:Transformation
+    ] ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_3>
+    :entity1 [
+        edoal:and (wine:Bordeaux17
+            [
+                edoal:or (wine:Bordeaux18
+                    wine:Bordeaux18
+                ) ;
+                a edoal:Class
+            ]
+        ) ;
+        a edoal:Class
+    ] ;
+    :entity2 vin:Vin ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_4>
+    :entity1 [
+        edoal:or (vin:Acidite
+            vin:Astreingence
+            vin:Amertume
+        ) ;
+        a edoal:Class
+    ] ;
+    :entity2 [
+        edoal:not vin:WineFlavor ;
+        a edoal:Class
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_class_basis>
+    :entity1 wine:VintageYear ;
+    :entity2 vin:Millesime ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_class_const>
+    :entity1 [
+        edoal:not [
+            edoal:and ([
+                    edoal:or ([
+                            edoal:and (wine:Bordeaux1
+                                wine:Bordeaux2
+                            ) ;
+                            a edoal:Class
+                        ]
+                        [
+                            edoal:not wine:Bordeaux3 ;
+                            a edoal:Class
+                        ]
+                    ) ;
+                    a edoal:Class
+                ]
+                [
+                    edoal:not wine:Bordeaux4 ;
+                    a edoal:Class
+                ]
+            ) ;
+            a edoal:Class
+        ] ;
+        a edoal:Class
+    ] ;
+    :entity2 [
+        edoal:and (vin:Vin
+            [
+                edoal:or ([
+                        edoal:not vin:Bordeaux5 ;
+                        a edoal:Class
+                    ]
+                    vin:Bordeaux6
+                ) ;
+                a edoal:Class
+            ]
+            [
+                edoal:and ([
+                        edoal:not vin:Bordeaux7 ;
+                        a edoal:Class
+                    ]
+                    vin:Bordeaux7
+                ) ;
+                a edoal:Class
+            ]
+        ) ;
+        a edoal:Class
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_class_quant>
+    :entity1 [
+        edoal:or (wine:Vin
+            [
+                edoal:all wine:FrenchRegion ;
+                edoal:onAttribute wine:hasTerroir ;
+                a edoal:AttributeDomainRestriction
+            ]
+        ) ;
+        a edoal:Class
+    ] ;
+    :entity2 [
+        edoal:and (vin:Vin
+            [
+                edoal:exists wine:FrenchRegion ;
+                edoal:onAttribute vin:hasTerroir ;
+                a edoal:AttributeDomainRestriction
+            ]
+        ) ;
+        a edoal:Class
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_class_rest>
+    :entity1 [
+        edoal:or (wine:Vin
+            [
+                edoal:class wine:FrenchRegion ;
+                edoal:onAttribute proton:locatedIn ;
+                a edoal:AttributeDomainRestriction
+            ]
+            [
+                edoal:datatype "An-integer-as-datatype" ;
+                edoal:onAttribute wine:hasTerroir ;
+                a edoal:AttributeTypeRestriction
+            ]
+            [
+                edoal:comparator xsd:lower-than ;
+                edoal:onAttribute wine:hasTerroir ;
+                edoal:value "12" ;
+                a edoal:AttributeOccurenceRestriction
+            ]
+            wine:Bordeaux7
+        ) ;
+        a edoal:Class
+    ] ;
+    :entity2 [
+        edoal:and (vin:Vin
+            [
+                edoal:comparator xsd:equals ;
+                edoal:onAttribute vin:hasTerroir ;
+                edoal:value vin:Aquitaine ;
+                a edoal:AttributeValueRestriction
+            ]
+            [
+                edoal:comparator xsd:greater-than ;
+                edoal:onAttribute proton:locatedIn ;
+                edoal:value "4" ;
+                a edoal:AttributeOccurenceRestriction
+            ]
+        ) ;
+        a edoal:Class
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_class_values>
+    :entity1 [
+        edoal:or (wine:Vin
+            [
+                edoal:comparator xsd:equals ;
+                edoal:onAttribute wine:hasTerroir ;
+                edoal:value wine:Bordelais ;
+                a edoal:AttributeValueRestriction
+            ]
+            wine:Bordeaux7
+        ) ;
+        a edoal:Class
+    ] ;
+    :entity2 [
+        edoal:and (vin:Vin
+            [
+                edoal:comparator xsd:equals ;
+                edoal:onAttribute wine:hasTerroir ;
+                edoal:value [
+                    edoal:string "33" ;
+                    a edoal:Literal
+                ] ;
+                a edoal:AttributeValueRestriction
+            ]
+        ) ;
+        a edoal:Class
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_inst_basis>
+    :entity1 wine:ChateauMargaux1995 ;
+    :entity2 vin:MoutonRotschild1889 ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_prop_basis>
+    :entity1 wine:yearValue ;
+    :entity2 vin:anneeMillesime ;
+    :measure "1.0"^^xsd:float ;
+    :relation "Equivalence" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_prop_const>
+    :entity1 wine:number1 ;
+    :entity2 vin:dpt3 ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_prop_rest>
+    :entity1 [
+        edoal:comparator xsd:equals ;
+        edoal:value [
+            edoal:string "Bordeaux" ;
+            a edoal:Literal
+        ] ;
+        a edoal:PropertyValueRestriction
+    ] ;
+    :entity2 [
+        edoal:class [
+            edoal:and (vin:Bordeaux5
+                vin:Bordeaux6
+            ) ;
+            a edoal:Class
+        ] ;
+        a edoal:PropertyDomainRestriction
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_rel_basis>
+    :entity1 wine:locatedIn ;
+    :entity2 vin:hasTerroir ;
+    :measure "1.0"^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_rel_const>
+    :entity1 [
+        edoal:inverse wine:loc4 ;
+        a edoal:Relation
+    ] ;
+    :entity2 vin:place3 ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/MappingRule_rel_rest>
+    :entity1 [
+        edoal:class wine:Bordeaux1 ;
+        a edoal:RelationDomainRestriction
+    ] ;
+    :entity2 [
+        edoal:class [
+            edoal:and (vin:Bordeaux5
+                vin:Bordeaux6
+            ) ;
+            a edoal:Class
+        ] ;
+        a edoal:RelationDomainRestriction
+    ] ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    a :Cell .
+
+<http://oms.omwg.org/wine-vin/TransformationTest>
+    :entity1 <foaf:name> ;
+    :entity2 <vcard:name> ;
+    :measure "1."^^xsd:float ;
+    :relation "SubsumedBy" ;
+    edoal:transformation [
+        edoal:entity1 [
+            edoal:compose rdf:nil ;
+            a edoal:Property
+        ] ;
+        edoal:entity2 [
+            edoal:arguments (<vcard:firstname>
+                [
+                    edoal:string "" ;
+                    a edoal:Literal
+                ]
+                <vcard:middleinitial>
+                [
+                    edoal:string "." ;
+                    a edoal:Literal
+                ]
+                <vcard:lastname>
+            ) ;
+            edoal:operator "concat" ;
+            a edoal:Apply
+        ] ;
+        edoal:type "o-" ;
+        a edoal:Transformation
+    ] ;
+    a :Cell .
+
+<http://ontology.deri.org/vin#>
+    :formalism [
+        :name "wsml" ;
+        :uri "http://www.wsmo.org/wsml/wsml-syntax/wsml-dl" ;
+        a :Formalism
+    ] ;
+    :location "http://www.scharffe.fr/ontologies/OntologieDuVin.wsml" ;
+    a :Ontology .
+
+vin:Acidite
+    a edoal:Class .
+
+vin:Amertume
+    a edoal:Class .
+
+vin:Aquitaine
+    a edoal:Instance .
+
+vin:Astreingence
+    a edoal:Class .
+
+vin:Bordeaux5
+    a edoal:Class .
+
+vin:Bordeaux6
+    a edoal:Class .
+
+vin:Bordeaux7
+    a edoal:Class .
+
+vin:Millesime
+    a edoal:Class .
+
+vin:MoutonRotschild1889
+    a edoal:Instance .
+
+vin:Vin
+    a edoal:Class .
+
+vin:WineFlavor
+    a edoal:Class .
+
+vin:anneeMillesime
+    a edoal:Property .
+
+vin:dpt3
+    a edoal:Property .
+
+vin:hasTerroir
+    a edoal:Relation .
+
+vin:place3
+    a edoal:Relation .
+
+proton:locatedIn
+    a edoal:Relation .
+
+<http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#>
+    :formalism [
+        :name "owl" ;
+        :uri "http://www.w3.org/TR/owl-guide/" ;
+        a :Formalism
+    ] ;
+    a :Ontology .
+
+wine:Bordeaux1
+    a edoal:Class .
+
+wine:Bordeaux17
+    a edoal:Class .
+
+wine:Bordeaux18
+    a edoal:Class .
+
+wine:Bordeaux2
+    a edoal:Class .
+
+wine:Bordeaux3
+    a edoal:Class .
+
+wine:Bordeaux4
+    a edoal:Class .
+
+wine:Bordeaux7
+    a edoal:Class .
+
+wine:Bordelais
+    a edoal:Instance .
+
+wine:ChateauMargaux1995
+    a edoal:Instance .
+
+wine:FrenchRegion
+    a edoal:Class .
+
+wine:Vin
+    a edoal:Class .
+
+wine:VintageYear
+    a edoal:Class .
+
+wine:hasTerroir
+    a edoal:Relation .
+
+wine:loc4
+    a edoal:Relation .
+
+wine:locatedIn
+    a edoal:Relation .
+
+wine:number1
+    a edoal:Property .
+
+wine:yearValue
+    a edoal:Property .
+
+<vcard:firstname>
+    a edoal:Property .
+
+<vcard:lastname>
+    a edoal:Property .
+
+<vcard:middleinitial>
+    a edoal:Property .
+
+<vcard:name>
+    a edoal:Relation .
+

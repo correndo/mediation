@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment' 
+	xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' 
+	xmlns:map='http://www.rkbexplorer.com/maps/akt/#'
+	xmlns:xsd='http://www.w3.org/2001/XMLSchema#'>
+
+<Alignment rdf:about='http://www.rkbexplorer.com/maps/akt/kisti'>
+	<xml>yes</xml>
+	<level>0</level>
+	<type>11</type>
+	
+ 	<onto1>
+		<Ontology rdf:about="http://rdf.ecs.soton.ac.uk/ontology/ecs#"/>
+	</onto1>
+	<onto2>
+	    <Ontology rdf:about="http://xmlns.com/foaf/0.1/"/>
+	</onto2>
+	
+	<uri1>http://rdf.ecs.soton.ac.uk/ontology/ecs#</uri1>
+	<uri2>http://xmlns.com/foaf/0.1/</uri2>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#Agent'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/Agent'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#Organisation'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/Organization'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#Project'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/Project'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#Individual'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/Person'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#Document'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/Document'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>c=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAuthor'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/maker'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAgentAddress'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/based_near'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasEmailAddress'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/mbox'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasTelephone'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/phone'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasWebPage'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/homePage'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasSupervisor'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/knows'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#producesPublication'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/made'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasDescription'/>
+			<entity2 rdf:resource='http://purl.org/dc/elements/1.1/description'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasName'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/name'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAppellation'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/title'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasFamilyName'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/family_name'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasFullName'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/name'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasGivenName'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/givenname'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#hasInterest'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/topic_interest'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	<map>
+		<Cell>
+			<entity1 rdf:resource='http://rdf.ecs.soton.ac.uk/ontology/ecs#memberOf'/>
+			<entity2 rdf:resource='http://xmlns.com/foaf/0.1/member'/>
+			<measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+			<relation>p=</relation>
+		</Cell>
+	</map>
+	</Alignment>
+</rdf:RDF>

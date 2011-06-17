@@ -1,0 +1,772 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://ecs.soton.ac.uk/om.owl#">
+  <j.0:Alignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/maker"/>
+            <rdf:object rdf:nodeID="A1"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAuthor"/>
+            <rdf:object rdf:nodeID="A1"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A2"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/based_near"/>
+            <rdf:object rdf:nodeID="A3"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A2"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAgentAddress"/>
+            <rdf:object rdf:nodeID="A3"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A4"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+            <rdf:object rdf:nodeID="A5"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A4"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasName"/>
+            <rdf:object rdf:nodeID="A5"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A6"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/title"/>
+            <rdf:object rdf:nodeID="A7"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A6"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAppellation"/>
+            <rdf:object rdf:nodeID="A7"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A8"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A8"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Agent"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A9"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/phone"/>
+            <rdf:object rdf:nodeID="A10"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A9"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasTelephone"/>
+            <rdf:object rdf:nodeID="A10"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A11"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/topic_interest"/>
+            <rdf:object rdf:nodeID="A12"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A11"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasInterest"/>
+            <rdf:object rdf:nodeID="A12"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A13"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A13"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Organisation"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A14"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
+            <rdf:object rdf:nodeID="A15"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A14"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasSupervisor"/>
+            <rdf:object rdf:nodeID="A15"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A16"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/made"/>
+            <rdf:object rdf:nodeID="A17"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A16"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#producesPublication"/>
+            <rdf:object rdf:nodeID="A17"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A18"/>
+            <rdf:predicate rdf:resource="http://purl.org/dc/elements/1.1/description"/>
+            <rdf:object rdf:nodeID="A19"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A18"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasDescription"/>
+            <rdf:object rdf:nodeID="A19"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A20"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A20"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Project"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A21"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+            <rdf:object rdf:nodeID="A22"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A21"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasFullName"/>
+            <rdf:object rdf:nodeID="A22"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A23"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A23"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Document"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A24"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A24"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Individual"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasSourceOntology rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A25"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
+            <rdf:object rdf:nodeID="A26"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A25"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasEmailAddress"/>
+            <rdf:object rdf:nodeID="A26"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A27"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+            <rdf:object rdf:nodeID="A28"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A27"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#memberOf"/>
+            <rdf:object rdf:nodeID="A28"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasTargetOntology rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A29"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/family_name"/>
+            <rdf:object rdf:nodeID="A30"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A29"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasFamilyName"/>
+            <rdf:object rdf:nodeID="A30"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A31"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/homePage"/>
+            <rdf:object rdf:nodeID="A32"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A31"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasWebPage"/>
+            <rdf:object rdf:nodeID="A32"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A33"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/givenname"/>
+            <rdf:object rdf:nodeID="A34"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A33"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasGivenName"/>
+            <rdf:object rdf:nodeID="A34"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+  </j.0:Alignment>
+  <j.0:Alignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A35"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Document"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A35"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A36"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Project"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A36"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A37"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasDescription"/>
+            <rdf:object rdf:nodeID="A38"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A37"/>
+            <rdf:predicate rdf:resource="http://purl.org/dc/elements/1.1/description"/>
+            <rdf:object rdf:nodeID="A38"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A39"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#memberOf"/>
+            <rdf:object rdf:nodeID="A40"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A39"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+            <rdf:object rdf:nodeID="A40"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A41"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAppellation"/>
+            <rdf:object rdf:nodeID="A42"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A41"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/title"/>
+            <rdf:object rdf:nodeID="A42"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A43"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasGivenName"/>
+            <rdf:object rdf:nodeID="A44"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A43"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/givenname"/>
+            <rdf:object rdf:nodeID="A44"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A45"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasFullName"/>
+            <rdf:object rdf:nodeID="A46"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A45"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+            <rdf:object rdf:nodeID="A46"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasSourceOntology rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A47"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAuthor"/>
+            <rdf:object rdf:nodeID="A48"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A47"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/maker"/>
+            <rdf:object rdf:nodeID="A48"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A49"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Agent"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A49"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A50"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasAgentAddress"/>
+            <rdf:object rdf:nodeID="A51"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A50"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/based_near"/>
+            <rdf:object rdf:nodeID="A51"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A52"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasEmailAddress"/>
+            <rdf:object rdf:nodeID="A53"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A52"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
+            <rdf:object rdf:nodeID="A53"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasTargetOntology rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A54"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasTelephone"/>
+            <rdf:object rdf:nodeID="A55"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A54"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/phone"/>
+            <rdf:object rdf:nodeID="A55"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A56"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#producesPublication"/>
+            <rdf:object rdf:nodeID="A57"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A56"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/made"/>
+            <rdf:object rdf:nodeID="A57"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A58"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasWebPage"/>
+            <rdf:object rdf:nodeID="A59"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A58"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/homePage"/>
+            <rdf:object rdf:nodeID="A59"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A60"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasSupervisor"/>
+            <rdf:object rdf:nodeID="A61"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A60"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
+            <rdf:object rdf:nodeID="A61"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A62"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Organisation"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A62"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A63"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasName"/>
+            <rdf:object rdf:nodeID="A64"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A63"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+            <rdf:object rdf:nodeID="A64"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A65"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasFamilyName"/>
+            <rdf:object rdf:nodeID="A66"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A65"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/family_name"/>
+            <rdf:object rdf:nodeID="A66"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A67"/>
+            <rdf:predicate rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#hasInterest"/>
+            <rdf:object rdf:nodeID="A68"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A67"/>
+            <rdf:predicate rdf:resource="http://xmlns.com/foaf/0.1/topic_interest"/>
+            <rdf:object rdf:nodeID="A68"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A69"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs#Individual"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A69"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+  </j.0:Alignment>
+</rdf:RDF>

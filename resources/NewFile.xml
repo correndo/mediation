@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<Cell rdf:about="MappingRule_3">
+		<entity1>
+			<edoal:Class rdf:about="&wine;Bordeaux" />
+		</entity1>
+		<entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="&vin;Vin" />
+					<edoal:AttributeValueRestriction>
+						<edoal:onAttribute>
+							<edoal:Relation>
+								<edoal:compose rdf:parseType="Collection">
+									<edoal:Relation rdf:about="&vin;hasTerroir" />
+									<edoal:Relation rdf:about="&proton;locatedIn" />
+								</edoal:compose>
+							</edoal:Relation>
+						</edoal:onAttribute>
+						<edoal:comparator rdf:resource="&xsd;equals" />
+						<edoal:value>
+							<edoal:Instance rdf:about="&vin;Aquitaine" />
+						</edoal:value>
+					</edoal:AttributeValueRestriction>
+				</edoal:and>
+			</edoal:Class>
+		</entity2>
+		<measure rdf:datatype='&xsd;float'>1.</measure>
+		<relation>SubsumedBy</relation>
+	</Cell>
+</map>

@@ -1,0 +1,35 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://ecs.soton.ac.uk/om.owl#">
+  <j.0:Alignment>
+    <j.0:hasSourceOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#"/>
+    <j.0:hasTargetOntology rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#"/>
+    <j.0:hasTargetDataset rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#dataset"/>
+    <j.0:hasEntityAlignment>
+      <j.0:EntityAlignment>
+        <j.0:lhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/source#Kettle"/>
+          </rdf:Statement>
+        </j.0:lhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <rdf:object rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#Boiler"/>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:rhs>
+          <rdf:Statement>
+            <rdf:subject rdf:nodeID="A0"/>
+            <rdf:predicate rdf:resource="http://correndo.ecs.soton.ac.uk/ontology/target#type"/>
+            <rdf:object>kettle-type</rdf:object>
+          </rdf:Statement>
+        </j.0:rhs>
+        <j.0:hasRelation rdf:resource="http://ecs.soton.ac.uk/om.owl#EQ"/>
+      </j.0:EntityAlignment>
+    </j.0:hasEntityAlignment>
+  </j.0:Alignment>
+</rdf:RDF>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="mediation">
+	<property environment="env" />
+	<property name="project.name" value="mediation" />
+	<property name="junit.output.dir" value="junit" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+	<path id="mediation.classpath">
+		<pathelement location="bin" />
+		<pathelement location="lib/procalign.jar" />
+		<pathelement location="lib/align.jar" />
+		<pathelement location="lib/arq-extra.jar" />
+		<pathelement location="lib/arq.jar" />
+		<pathelement location="lib/icu4j_3_4.jar" />
+		<pathelement location="lib/iri.jar" />
+		<pathelement location="lib/jena.jar" />
+		<pathelement location="lib/jenatest.jar" />
+		<pathelement location="lib/json.jar" />
+		<pathelement location="lib/junit-4.5.jar" />
+		<pathelement location="lib/log4j-1.2.12.jar" />
+		<pathelement location="lib/lucene-core-2.3.1.jar" />
+		<pathelement location="lib/slf4j-api-1.5.6.jar" />
+		<pathelement location="lib/slf4j-log4j12-1.5.6.jar" />
+		<pathelement location="lib/stax-api-1.0.jar" />
+		<pathelement location="lib/wstx-asl-3.0.0.jar" />
+		<pathelement location="lib/xercesImpl.jar" />
+	</path>
+	<target name="init">
+		<mkdir dir="bin" />
+		<mkdir dir="dist" />
+		<mkdir dir="doc" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="test">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="bin" />
+		<delete dir="dist" />
+		<delete dir="doc" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<target depends="init" name="build">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="mediation.classpath" />
+		</javac>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+			<src path="test" />
+			<classpath refid="mediation.classpath" />
+		</javac>
+	</target>
+	<target name="EntityTranslationTest">
+		<mkdir dir="${junit.output.dir}" />
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="uk.soton.service.mediation.algebra.EntityTranslationTest" todir="${junit.output.dir}" />
+			<classpath refid="mediation.classpath" />
+		</junit>
+	</target>
+	<target name="JenaMultipleFileVoidDatasetManagerTest">
+		<mkdir dir="${junit.output.dir}" />
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="uk.soton.service.dataset.JenaMultipleFileVoidDatasetManagerTest" todir="${junit.output.dir}" />
+			<classpath refid="mediation.classpath" />
+		</junit>
+	</target>
+	<target name="junitreport">
+		<junitreport todir="${junit.output.dir}">
+			<fileset dir="${junit.output.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${junit.output.dir}" />
+		</junitreport>
+	</target>
+	<target name="construct-example">
+		<java classname="uk.soton.examples.EDOALExamples" fork="true">
+			<classpath refid="mediation.classpath" />
+		</java>
+	</target>
+
+	<target name="jar" depends="build" description="Build the distribution .jar file">
+	</target>
+
+	<target name="archive" depends="jar" description="Package the archives">
+		<jar jarfile="dist/${project.name}.jar" basedir="bin" />
+	</target>
+
+	<target name="apidoc" description="Build the javadoc documentation">
+		<javadoc sourcepath="src" destdir="doc" linksource="yes" access="private">
+			<classpath refid="mediation.classpath" />
+		</javadoc>
+	</target>
+</project>
