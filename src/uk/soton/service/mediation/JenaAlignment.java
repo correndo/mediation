@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import uk.soton.service.mediation.algebra.Function;
+import uk.soton.service.mediation.algebra.FunctionWrapper;
 import uk.soton.service.mediation.algebra.operation.*;
 
 import com.hp.hpl.jena.graph.Node;
@@ -40,7 +42,9 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Seq;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.sparql.function.Function;
+import com.hp.hpl.jena.sparql.expr.E_Add;
+import com.hp.hpl.jena.sparql.expr.E_Subtract;
+//import com.hp.hpl.jena.sparql.function.Function;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 
 /**
@@ -84,9 +88,9 @@ public class JenaAlignment implements Alignment {
 
 	{
 		resolver = new Hashtable<Node, Function>();
-		resolver.put(Node.createURI(RDFVocabulary.SAMEAS), new SameAs());
-		resolver.put(Node.createURI(RDFVocabulary.FN_SUB), new Sub());
-		resolver.put(Node.createURI(RDFVocabulary.FN_SUM), new Sum());
+		resolver.put(Node.createURI(RDFVocabulary.SAMEAS), FunctionWrapper.$(new SameAs()));
+		resolver.put(Node.createURI(RDFVocabulary.FN_SUB), FunctionWrapper.$(new E_Subtract(null,null)));
+		resolver.put(Node.createURI(RDFVocabulary.FN_SUM), FunctionWrapper.$(new E_Add(null,null)));
 
 	}
 
@@ -191,7 +195,7 @@ public class JenaAlignment implements Alignment {
 	public MatchingResult matchLHS(Triple t) {
 		Hashtable<Node, Node> binding = null;
 		Hashtable<Triple, List<Triple>> p = this.getPatterns();
-		log.log(Level.INFO, "Patterns keys: " + p.keySet());
+		//log.log(Level.INFO, "Patterns keys: " + p.keySet());
 		for (Triple pt : this.patterns.keySet()) {
 			binding = Utility.match(pt, t);
 			if (binding != null) {
@@ -357,7 +361,7 @@ public class JenaAlignment implements Alignment {
 		if (this.patterns != null) {
 			return this.patterns;
 		}
-		log.log(Level.INFO, "Model: " + this.inner);
+		//log.log(Level.INFO, "Model: " + this.inner);
 		Hashtable<Triple, List<Triple>> result = new Hashtable<Triple, List<Triple>>();
 		fdependencies = new Hashtable<Triple, Hashtable<Node, FunctionalDependency>>();
 		ResIterator ei = inner.listSubjectsWithProperty(

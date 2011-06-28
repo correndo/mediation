@@ -19,23 +19,23 @@
  */
 package uk.soton.service.mediation.algebra;
 
-import java.util.List;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Stack;
 
 import uk.soton.service.mediation.Alignment;
 import uk.soton.service.mediation.EntityTranslationService;
 
-import com.hp.hpl.jena.graph.Triple;
 import com.hp.hpl.jena.graph.Node;
+import com.hp.hpl.jena.graph.Triple;
 import com.hp.hpl.jena.sparql.algebra.Op;
 import com.hp.hpl.jena.sparql.algebra.TransformCopy;
 import com.hp.hpl.jena.sparql.algebra.op.OpBGP;
 import com.hp.hpl.jena.sparql.algebra.op.OpFilter;
+import com.hp.hpl.jena.sparql.algebra.op.OpSequence;
 import com.hp.hpl.jena.sparql.core.BasicPattern;
 import com.hp.hpl.jena.sparql.expr.Expr;
 import com.hp.hpl.jena.sparql.expr.ExprList;
-
 
 /**
  * The EntityTranslation class extends the Jena ARQ <a href="http://www.openjena.org/ARQ/javadoc/com/hp/hpl/jena/sparql/algebra/TransformCopy.html">TransformCopy</a>
@@ -74,17 +74,24 @@ public class EntityTranslation extends TransformCopy {
      * @see com.hp.hpl.jena.sparql.algebra.TransformCopy#transform(com.hp.hpl.jena.sparql.algebra.op.OpBGP)
      */
     @Override
-    public Op transform(OpBGP opBGP){
-        Op result = new OpBGP(new BasicPattern());       
-        List<Triple> bpl = (List<Triple>)opBGP.getPattern().getList();
-        EntityTranslationService.BGPTranslationResult bgptr = null;
-        bgptr = this.ets.getTranslatedTriples(a, bpl);
-        for (Triple t : bgptr.getTranslatedBGP()){
-        	((OpBGP)result).getPattern().add(t);
-        }
-        bindingsStack.push(bgptr.getBindings());
-        return result;
-    }
+	public Op transform(OpBGP opBGP) {
+		Op result = new OpBGP(new BasicPattern());
+		List<Triple> bpl = (List<Triple>) opBGP.getPattern().getList();
+		EntityTranslationService.BGPTranslationResult bgptr = null;
+		bgptr = this.ets.getTranslatedTriples(a, bpl);
+		for (Triple t : bgptr.getTranslatedBGP()) {
+			((OpBGP) result).getPattern().add(t);
+		}
+		bindingsStack.push(bgptr.getBindings());
+		if (bgptr.getLets().size() > 0) {
+			for (OpAssignGenerator assignment : bgptr.getLets()) {
+				result = assignment.get(result);
+			}
+			return result;
+		} else {			
+			return result;
+		}
+	}
     
     /**
      * Visitor method for OpFilter in order to rearrange the variables within with the given bindings

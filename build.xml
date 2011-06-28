@@ -103,7 +103,7 @@
 	</target>
 
 	<target name="apidoc" description="Build the javadoc documentation">
-		<javadoc sourcepath="src" destdir="doc" linksource="yes" access="private">
+		<javadoc sourcepath="src" destdir="doc" linksource="yes" access="private" excludepackagenames="uk.soton.examples">
 			<classpath refid="mediation.classpath" />
 		</javadoc>
 	</target>

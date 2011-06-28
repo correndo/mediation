@@ -17,6 +17,7 @@ import com.hp.hpl.jena.sparql.algebra.Transformer;
 import com.hp.hpl.jena.sparql.function.library.sqrt;
 import uk.soton.service.mediation.algebra.EntityTranslation;
 import uk.soton.service.mediation.algebra.ExtendedOpAsQuery;
+import uk.soton.service.mediation.algebra.FunctionWrapper;
 import uk.soton.service.mediation.algebra.operation.SameAs;
 import uk.soton.service.mediation.edoal.EDOALQueryGenerator;
 
@@ -32,7 +33,7 @@ public class RewritingRuleTest {
     
     Triple lhs = new Triple(pid1, Node.createURI("http://foaf.org/name"), name);
     @SuppressWarnings("serial")
-    final FunctionalDependency fd = new FunctionalDependency(pid2, new SameAs(), new ArrayList<Node>() {{ add(pid1); add(Node.createLiteral("http://dbpedia.org/*")); }}, RDFVocabulary.SAMEAS);
+    final FunctionalDependency fd = new FunctionalDependency(pid2, FunctionWrapper.$(new SameAs()), new ArrayList<Node>() {{ add(pid1); add(Node.createLiteral("http://dbpedia.org/*")); }}, RDFVocabulary.SAMEAS);
     @SuppressWarnings("serial")
     ArrayList<Triple> rhs = new ArrayList<Triple>() {{  
         add(new Triple(pid2, Node.createURI("http://dbpedia.org/onto/name"), name));

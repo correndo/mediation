@@ -6,8 +6,8 @@ It's a lightweight toolkit to implement ontological mediation over RDF.
 It uses ontology mappings in order to rewrite SPARQL SELECT queries and to generate SPARQL CONSTRUCT queries to import an external data set.
  
 API
-___
-
+--------
+ 
 The tool is divided in the following packages:
 
 * [uk.soton.service.dataset](https://github.com/correndo/mediation/tree/master/src/uk/soton/service/dataset) Provides the classes and interfaces necessaries to manages distributed datasets.

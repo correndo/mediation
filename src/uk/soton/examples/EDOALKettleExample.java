@@ -42,9 +42,9 @@ public class EDOALKettleExample {
 					+ "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
 					+ "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>"
 					+ "PREFIX owl:   <http://www.w3.org/2002/07/owl#>"
-					+ "SELECT DISTINCT ?v ?y WHERE { "
+					+ "SELECT DISTINCT ?v ?y ?z WHERE { "
 					+ "           ?v a source:Person ; source:hasKettle ?y . " 
-					+ "           ?y source:hasTemperature \"100\"^^<http://www.w3.org/2001/XMLSchema#int>.} LIMIT 10";
+					+ "           ?y source:hasTemperature ?z.} LIMIT 10";
 			Query query = QueryFactory.create(querys, Syntax.syntaxARQ);
 			Op op = Algebra.compile(query);
 			EntityTranslationService ets = new EntityTranslationServiceImpl();

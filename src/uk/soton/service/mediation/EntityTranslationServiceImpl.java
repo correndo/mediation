@@ -27,9 +27,18 @@ import org.apache.log4j.Logger;
 
 import uk.soton.service.mediation.FunctionalDependency;
 import uk.soton.service.mediation.Alignment.MatchingResult;
+import uk.soton.service.mediation.algebra.OpAssignGenerator;
 
 import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.graph.Triple;
+import com.hp.hpl.jena.graph.query.Expression.Variable;
+import com.hp.hpl.jena.sparql.algebra.Op;
+import com.hp.hpl.jena.sparql.algebra.op.OpAssign;
+import com.hp.hpl.jena.sparql.core.Var;
+import com.hp.hpl.jena.sparql.expr.E_Add;
+import com.hp.hpl.jena.sparql.expr.Expr;
+import com.hp.hpl.jena.sparql.expr.ExprNode;
+import com.hp.hpl.jena.sparql.expr.ExprVar;
 import com.hp.hpl.jena.sparql.expr.NodeValue;
 import com.hp.hpl.jena.sparql.function.FunctionBase;
 
@@ -39,6 +48,10 @@ import com.hp.hpl.jena.sparql.function.FunctionBase;
  */
 public class EntityTranslationServiceImpl implements EntityTranslationService {
 
+
+	private List<OpAssignGenerator> lets = new ArrayList<OpAssignGenerator>();
+	
+	 
 	/* (non-Javadoc)
 	 * @see uk.soton.service.mediation.EntityTranslationService#getTranslatedTriples(uk.soton.service.mediation.Alignment, java.util.List)
 	 */
@@ -51,15 +64,15 @@ public class EntityTranslationServiceImpl implements EntityTranslationService {
 			MatchingResult mr = a.matchLHS(t);
 			if (mr != null) {
 				for (Triple target : mr.getRhs()) {
-					target = EntityTranslationServiceImpl.instantiateFunction(target, mr, a);
-					target = EntityTranslationServiceImpl.instantiatePattern(target, mr.getBinding());
+					target = instantiateFunction(target, mr , a);
+					target = instantiatePattern(target, mr.getBinding());
 					result.add(target);
 					bind.putAll(mr.getBinding());
 				}
 			} else
 				result.add(t);
 		}
-		return new BGPTranslationResult(result, bind);
+		return new BGPTranslationResult(result, bind,lets);
 	}
 
 	/*
@@ -73,7 +86,7 @@ public class EntityTranslationServiceImpl implements EntityTranslationService {
 	 * @param binding binding from a match operation
 	 * @return instantiated triple
 	 */
-	public static Triple instantiatePattern(Triple t,
+	public Triple instantiatePattern(Triple t,
 			Hashtable<Node, Node> binding) {
 		Triple result = null;
 		Node subject = t.getMatchSubject();
@@ -93,42 +106,70 @@ public class EntityTranslationServiceImpl implements EntityTranslationService {
 	 *
 	 * @param target triple to instantiate
 	 * @param mr variables binding to use
-	 * @param a entity alignment to use
 	 * @return instantiated triple
 	 */
-	public static Triple instantiateFunction(Triple target, MatchingResult mr,
-			Alignment a) {
+	public Triple instantiateFunction(Triple target, MatchingResult mr, Alignment a) {
 		Hashtable<Node, Node> binding = mr.getBinding();
 		Node[] vars = new Node[] { target.getSubject(), target.getObject() };
 		FunctionalDependency fd;
-
+		ArrayList<Node> unbounded = new ArrayList<Node>();
+		
 		for (Node v : vars) {
-
+			
 			if (v.isVariable()) {
 				fd = mr.getFunctionalDependency(v);
 				if (fd != null) {
-					System.out.println(fd.toString());
 					List<NodeValue> params = new ArrayList<NodeValue>();
 					NodeValue nvp, nvr;
 					Boolean inst = true;
 
 					for (Node p : fd.getParam()) {
+						Node ground = null;
 						if (p.isVariable() && binding.containsKey(p)) {
-							p = binding.get(p);
+							ground = binding.get(p);
 						}
-						if (p.isVariable()) {
+						if (ground != null && ground.isVariable()) {
 							inst = false;
+							unbounded.add(p);
+							params.add(NodeValue.makeNode(p));
+						} else if (ground != null){
+							nvp = NodeValue.makeNode(ground);
+							params.add(nvp);
+						} else {
+							//Create the value for value not present in the bindings
+							params.add(NodeValue.makeNode(p));
 						}
-						nvp = NodeValue.makeNode(p);
-						params.add(nvp);
 					}
-					nvr = ((FunctionBase) fd.getFunc()).exec(params);
-					//TODO : Handle the BINDING generation case
-					binding.put(v, nvr.asNode());
-					if (!inst) Logger.getLogger(EntityTranslationServiceImpl.class).warn("An unbounded variable couldn't be translated in a SPARQL compliant mode.");					
+					if (inst){
+						//Free variables - generate binding Ops
+						nvr = fd.getFunc().eval(params);
+					    binding.put(v, nvr.asNode());
+					} else {
+						//Create the OpAssign bindings for unbounded vars
+						instanciateBindings(unbounded,  mr);
+					}
 				}
 			}
 		}
 		return target;
+	}
+
+	/**
+	 * The instanciateBindings method create the data for generate the OpAssign operations for assign correct values when unbounded vars appears
+	 * @param unbounded a list of vars without ground values
+	 * @param mr the mapping result instance
+	 * 
+	 */
+	private void instanciateBindings(List<Node> unbounded, MatchingResult mr) {
+		for (Node tobind : unbounded){
+			FunctionalDependency fd = mr.getFunctionalDependency(tobind);
+			List<Node> par = fd.getParam();
+			tobind = mr.getBinding().get(tobind);
+			List<Expr> exp = new ArrayList<Expr>();
+			for (Node nv : par){
+				exp.add(NodeValue.makeNode(nv));
+			}
+			lets.add(new OpAssignGenerator((Var) tobind, fd.getFunc().copy(exp)));
+		}		
 	}
 }

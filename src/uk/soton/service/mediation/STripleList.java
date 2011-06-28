@@ -63,7 +63,7 @@ public class STripleList extends ArrayList<STriple> {
 	
 	/**
 	 * Return <b>this</b> as an ArrayList<Triple>.
-	 * @see java.lang.util.ArrayList
+	 * @see java.util.ArrayList
 	 * @return <b>this</b> instance as an ArrayList of Jena Triple instances
 	 */
 	public ArrayList<Triple> asTripleList(){

@@ -19,11 +19,13 @@
  */
 package uk.soton.service.mediation;
 
-import java.util.List;
 import java.util.Hashtable;
+import java.util.List;
 
-import com.hp.hpl.jena.graph.Triple;
+import uk.soton.service.mediation.algebra.OpAssignGenerator;
+
 import com.hp.hpl.jena.graph.Node;
+import com.hp.hpl.jena.graph.Triple;
 
 /**
  * The Interface EntityTranslationService defines a service that translate a Basic Graph Pattern in accordance with a  given ontology alignment.
@@ -53,15 +55,20 @@ public interface EntityTranslationService {
 		private Hashtable<Node,Node> bindings;
 		
 		/**
+		 * The field lets is the list of assignment statements.
+		 */
+		private List<OpAssignGenerator> lets;
+
+		/**
 		 * Instantiates a new BGP translation result.
 		 *
 		 * @param nbgp the new Basic Graph Pattern
 		 * @param bindings the variable bindings
-		 * @return new instance of a BGPTranslationResult
 		 */
-		public BGPTranslationResult(List<Triple> nbgp, Hashtable<Node,Node> bindings){
+		public BGPTranslationResult(List<Triple> nbgp, Hashtable<Node,Node> bindings, List<OpAssignGenerator> l){
 			this.translatedBGP = nbgp;
 			this.bindings = bindings;
+			this.setLets(l);
 		}
 		
 		/**
@@ -80,6 +87,20 @@ public interface EntityTranslationService {
 		 */
 		public Hashtable<Node, Node> getBindings() {
 			return bindings;
+		}
+
+		/**
+		 * @param lets the lets to set
+		 */
+		public void setLets(List<OpAssignGenerator> lets) {
+			this.lets = lets;
+		}
+
+		/**
+		 * @return the lets
+		 */
+		public List<OpAssignGenerator> getLets() {
+			return lets;
 		}
 	}
 

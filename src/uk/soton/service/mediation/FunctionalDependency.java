@@ -20,7 +20,8 @@
 package uk.soton.service.mediation;
 
 import com.hp.hpl.jena.graph.Node;
-import com.hp.hpl.jena.sparql.function.Function;
+//import com.hp.hpl.jena.sparql.function.Function;
+import uk.soton.service.mediation.algebra.Function;
 import java.util.List;
 
 /**

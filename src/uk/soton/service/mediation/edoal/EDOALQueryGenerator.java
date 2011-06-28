@@ -21,6 +21,7 @@ package uk.soton.service.mediation.edoal;
 
 import com.hp.hpl.jena.graph.Node;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
@@ -55,6 +56,7 @@ public class EDOALQueryGenerator {
 
 	private static Logger log = Logger.getLogger(EDOALQueryGenerator.class
 			.getName());
+	
 
 	/**
 	 * The getExpr method returns the Jena SPARQL Expression from a generic Node
@@ -65,10 +67,10 @@ public class EDOALQueryGenerator {
 	private static Expr getExpr(Node n) {
 		if (n.isVariable())
 			return new ExprVar(n);
-		if (n.isLiteral())
+		if (n.isLiteral() || n.isURI())
 			return NodeValue.makeNode(n);
-		if (n.isURI())
-			return new NodeValueNode(n);
+		//if (n.isURI())
+		//	return new NodeValueNode(n);
 		log.log(Level.WARNING, "Node not recognized:" + n.toString());
 		return null;
 	}
@@ -95,21 +97,13 @@ public class EDOALQueryGenerator {
 				ElementGroup eg = new ElementGroup();
 				qp.addTriple(lhs);
 				Set<Var>  groundVars = qp.varsMentioned();
+				Set<Node>  freeVars = new HashSet<Node>();
 				eg.addElement(qp);
 				Hashtable<Node, FunctionalDependency> deps = patterns
 						.getFunctionalDependencies().get(lhs);
-
-				for (Node k : deps.keySet()) {
-					final FunctionalDependency fd = deps.get(k);
-					String firi = fd.getFuncURI();
-					ExprList el = new ExprList();
-					for (Node pa : fd.getParam()) {
-						el.add(getExpr(pa));
-					}
-					eg.addElement(new ElementAssign(getExpr(k).asVar(),
-							new E_Function(firi, el)));
-				}
-				current.setQueryPattern(eg);
+				//Add CONSTRUCT target ontology patterns
+				//TODO create blank nodes for free variables.
+				//@see http://www.w3.org/TR/rdf-sparql-query/#tempatesWithBNodes
 				TemplateGroup templ = new TemplateGroup();
 				for (Triple t : rhs) {
 					Node s,p,o;
@@ -117,16 +111,34 @@ public class EDOALQueryGenerator {
 					p = t.getPredicate();
 					o = t.getObject();
 					if (s.isVariable() && !groundVars.contains(s)){
-						s = Node.createAnon(AnonId.create(s.getName()));
+						s = Node.createVariable(s.getName());
+						freeVars.add(s);
 					}
 					if (p.isVariable() && !groundVars.contains(p)){
-						p = Node.createAnon(AnonId.create(p.getName()));
+						p = Node.createVariable(p.getName());
+						freeVars.add(p);
 					}
 					if (o.isVariable() && !groundVars.contains(o)){
-						o = Node.createAnon(AnonId.create(o.getName()));
+						o = Node.createVariable(o.getName());
+						freeVars.add(o);
 					}
 					templ.addTriple(new Triple(s,p,o));
 				}
+				//Creating LET statements for functional dependencies
+				for (Node k : freeVars) {
+					final FunctionalDependency fd = deps.get(k);
+					if (fd != null) {
+						String firi = fd.getFuncURI();
+						List<Expr> el = new ArrayList<Expr>();
+						for (Node pa : fd.getParam()) {
+							el.add(getExpr(pa));
+						}
+						eg.addElement(new ElementAssign(getExpr(k).asVar(), fd.getFunc().copy(el)));
+					} else {
+						log.log(Level.SEVERE, "No fdeps for variable: " + k);
+					}
+				}
+				current.setQueryPattern(eg);
 				current.setConstructTemplate(templ);
 				result.add(current);
 			}
