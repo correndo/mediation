@@ -99,3 +99,54 @@ The ontology alignments are represented as RDF files and describe rewriting rule
                           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
                                   _:b5
                         ] ;
+                        <http://ecs.soton.ac.uk/om.owl#hasRelation>
+                        <http://ecs.soton.ac.uk/om.owl#EQ> ;
+                <http://ecs.soton.ac.uk/om.owl#lhs>
+                        [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+                                  _:b4 ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+                                  <http://correndo.ecs.soton.ac.uk/ontology/target#temp> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+                                  _:b6
+                        ] ;
+                <http://ecs.soton.ac.uk/om.owl#rhs>
+                        [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+                                  _:b5 ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+                                  <http://correndo.ecs.soton.ac.uk/ontology/source#hasTemperature> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+                                  _:b6
+                        ]
+              ] ;
+              
+              
+ Once loaded an alignment the tool allows to rewrite a SPARQL SELECT query in order to fit a given schema:
+ 
+ [kettle-boiler] original query:
+	PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+	PREFIX  source: <http://correndo.ecs.soton.ac.uk/ontology/source#>
+	PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+	PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	SELECT DISTINCT  ?v ?y ?z ?lt
+	WHERE
+ 	{ ?v rdf:type source:Person .
+	?v source:hasKettle ?y .
+    ?v source:hasKettle ?l1 .
+    ?y source:hasTemperature 10 .
+    ?l1 source:hasTemperature ?lt1 .
+  	} LIMIT   10
+
+[kettle-boiler] translated query:
+	SELECT DISTINCT  ?v ?y ?z ?lt
+	WHERE
+  	{ ?v   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://correndo.ecs.soton.ac.uk/ontology/target#User> ;
+           <http://correndo.ecs.soton.ac.uk/ontology/target#boiler>  ?y ;
+           <http://correndo.ecs.soton.ac.uk/ontology/target#boiler>  ?l1 ;
+      ?y   <http://correndo.ecs.soton.ac.uk/ontology/target#temp>  283.15 .
+      ?l1  <http://correndo.ecs.soton.ac.uk/ontology/target#temp>  ?_12 .
+      LET (?lt1 := ( ?_12 - 273.15 ))
+	} LIMIT   10
