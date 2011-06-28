@@ -14,4 +14,88 @@ The tool is divided in the following packages:
 * [uk.soton.service.mediation](https://github.com/correndo/mediation/tree/master/src/uk/soton/service/mediation) Provides the classes and interfaces necessaries to mediate RDF documents and SPARQL queries using graph rewriting rules.
 * [uk.soton.service.mediation.algebra](https://github.com/correndo/mediation/tree/master/src/uk/soton/service/mediation/algebra) Provides the classes and interfaces necessaries to manipulate SPARQL at the algebra level.
 * [uk.soton.service.mediation.algebra.operation](https://github.com/correndo/mediation/tree/master/src/uk/soton/service/mediation/algebra/operation) Provides the implementation of SPARQL XPath functions.
-* [uk.soton.service.mediation.edoal](https://github.com/correndo/mediation/tree/master/src/uk/soton/service/mediation/edoal) Provides the classes and interfaces necessaries to interface with the EDOAL ontology alignment format.
+* [uk.soton.service.mediation.edoal](https://github.com/correndo/mediation/tree/master/src/uk/soton/service/mediation/edoal) Provides the classes and interfaces necessaries to interface with the [EDOAL][edoal] ontology alignment format.
+
+[edoal]: http://alignapi.gforge.inria.fr/edoal.html 
+
+The ontology alignments are represented as RDF files and describe rewriting rules that allows to define class mappings:
+
+	[]    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+              <http://ecs.soton.ac.uk/om.owl#Alignment> ;
+      <http://ecs.soton.ac.uk/om.owl#hasEntityAlignment>
+              [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                        <http://ecs.soton.ac.uk/om.owl#EntityAlignment> ;
+                <http://ecs.soton.ac.uk/om.owl#hasRelation>
+                        <http://ecs.soton.ac.uk/om.owl#EQ> ;
+                <http://ecs.soton.ac.uk/om.owl#lhs>
+                        [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+                                  <http://correndo.ecs.soton.ac.uk/ontology/target#Boiler> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+                                  _:b1
+                        ] ;
+                <http://ecs.soton.ac.uk/om.owl#rhs>
+                        [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+                                  <http://correndo.ecs.soton.ac.uk/ontology/source#Kettle> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+                                  _:b1
+                        ]
+              ] ;
+              
+...property mappings:
+
+      <http://ecs.soton.ac.uk/om.owl#hasEntityAlignment>
+              [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                        <http://ecs.soton.ac.uk/om.owl#EntityAlignment> ;
+                <http://ecs.soton.ac.uk/om.owl#hasRelation>
+                        <http://ecs.soton.ac.uk/om.owl#EQ> ;
+                <http://ecs.soton.ac.uk/om.owl#lhs>
+                        [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+                                  _:b2 ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+                                  <http://correndo.ecs.soton.ac.uk/ontology/target#boiler> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+                                  _:b3
+                        ] ;
+                <http://ecs.soton.ac.uk/om.owl#rhs>
+                        [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+                                  _:b2 ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+                                  <http://correndo.ecs.soton.ac.uk/ontology/source#hasKettle> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+                                  _:b3
+                        ]
+              ] ;
+              
+...and data manipulation:
+
+      <http://ecs.soton.ac.uk/om.owl#hasEntityAlignment>
+              [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                        <http://ecs.soton.ac.uk/om.owl#EntityAlignment> ;
+                <http://ecs.soton.ac.uk/om.owl#hasFunctionalDependency>
+                        [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>
+                                  [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                            <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ;
+                                    <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1>
+                                            _:b4 ;
+                                    <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2>
+                                            273.15
+                                  ] ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>
+                                  <http://www.w3.org/2005/xpath-functions/sub> ;
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>
+                                  _:b5
+                        ] ;
