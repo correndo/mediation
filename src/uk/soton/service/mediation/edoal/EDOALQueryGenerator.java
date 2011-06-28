@@ -21,6 +21,7 @@ package uk.soton.service.mediation.edoal;
 
 import com.hp.hpl.jena.graph.Node;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
@@ -44,7 +45,9 @@ import com.hp.hpl.jena.sparql.expr.nodevalue.NodeValueNode;
 import com.hp.hpl.jena.sparql.syntax.ElementAssign;
 import com.hp.hpl.jena.sparql.syntax.ElementGroup;
 import com.hp.hpl.jena.sparql.syntax.ElementTriplesBlock;
+import com.hp.hpl.jena.sparql.syntax.Template;
 import com.hp.hpl.jena.sparql.syntax.TemplateGroup;
+import com.hp.hpl.jena.sparql.util.VarUtils;
 
 /**
  * The EDOALQueryGenerator class generates SPARQL CONSTRUCT queries to import external data
@@ -89,55 +92,73 @@ public class EDOALQueryGenerator {
 			Set<Triple> lhss = pat.keySet();
 			ArrayList<Query> result = new ArrayList<Query>();
 			for (Triple lhs : lhss) {
+				
 				List<Triple> rhs = pat.get(lhs);
 				Query current = new Query();
 				current.setQueryConstructType();
 				// Adding the source ontology pattern
 				ElementTriplesBlock qp = new ElementTriplesBlock();
 				ElementGroup eg = new ElementGroup();
-				qp.addTriple(lhs);
-				Set<Var>  groundVars = qp.varsMentioned();
-				Set<Node>  freeVars = new HashSet<Node>();
 				eg.addElement(qp);
-				Hashtable<Node, FunctionalDependency> deps = patterns
-						.getFunctionalDependencies().get(lhs);
+				qp.addTriple(lhs);
+				Hashtable<Node, FunctionalDependency> deps = patterns.getFunctionalDependencies().get(lhs);
+				//groundVars contains variables whose values will be grounded by the matching process
+				Set<Var>  groundVars = qp.varsMentioned();
+				Set<Var>  freeVars = new HashSet<Var>();
+				//Collect all the (free) variables present in the CONSTRUCT clause
+				for (Triple t : rhs) {
+					VarUtils.addVarsFromTriple(freeVars, t);
+				}
+				//Creating LET statements for functional dependencies
+				for (Var k : freeVars) {
+					final FunctionalDependency fd = deps.get(k.asNode());
+					if (fd != null) {
+						List<Expr> el = new ArrayList<Expr>();
+						for (Node pa : fd.getParam()) {
+							el.add(getExpr(pa));
+						}
+						eg.addElement(new ElementAssign(getExpr(k).asVar(), fd.getFunc().copy(el)));
+						//The variable k will be assigned by a LET clause
+						groundVars.add(k);
+					} else {
+						log.log(Level.SEVERE, "No fdeps for variable: " + k);
+					}
+				}	
+				freeVars.removeAll(groundVars);
+				//freeVars will now contain all the variables that will receive no ground values by the matching process or via LET clauses
+				//-------//
 				//Add CONSTRUCT target ontology patterns
-				//TODO create blank nodes for free variables.
-				//@see http://www.w3.org/TR/rdf-sparql-query/#tempatesWithBNodes
 				TemplateGroup templ = new TemplateGroup();
 				for (Triple t : rhs) {
 					Node s,p,o;
 					s = t.getSubject();
 					p = t.getPredicate();
 					o = t.getObject();
-					if (s.isVariable() && !groundVars.contains(s)){
-						s = Node.createVariable(s.getName());
-						freeVars.add(s);
+					
+					if (s.isVariable()){
+						if (groundVars.contains(s)){
+							s = Node.createVariable(s.getName());
+						} else if (freeVars.contains(s)){
+							s = Node.createAnon(AnonId.create(s.getName()));
+						}
 					}
-					if (p.isVariable() && !groundVars.contains(p)){
-						p = Node.createVariable(p.getName());
-						freeVars.add(p);
+					if (p.isVariable()){
+						if (groundVars.contains(p)){
+							p = Node.createVariable(p.getName());
+						} else if (freeVars.contains(p)){
+							p = Node.createAnon(AnonId.create(p.getName()));
+						}
 					}
-					if (o.isVariable() && !groundVars.contains(o)){
-						o = Node.createVariable(o.getName());
-						freeVars.add(o);
+					if (o.isVariable()){
+						if (groundVars.contains(o)){
+							o = Node.createVariable(o.getName());
+						} else if (freeVars.contains(o)){
+							o = Node.createAnon(AnonId.create(o.getName()));
+						}
 					}
 					templ.addTriple(new Triple(s,p,o));
 				}
-				//Creating LET statements for functional dependencies
-				for (Node k : freeVars) {
-					final FunctionalDependency fd = deps.get(k);
-					if (fd != null) {
-						String firi = fd.getFuncURI();
-						List<Expr> el = new ArrayList<Expr>();
-						for (Node pa : fd.getParam()) {
-							el.add(getExpr(pa));
-						}
-						eg.addElement(new ElementAssign(getExpr(k).asVar(), fd.getFunc().copy(el)));
-					} else {
-						log.log(Level.SEVERE, "No fdeps for variable: " + k);
-					}
-				}
+				//Assemble the whole thing together 
 				current.setQueryPattern(eg);
 				current.setConstructTemplate(templ);
 				result.add(current);

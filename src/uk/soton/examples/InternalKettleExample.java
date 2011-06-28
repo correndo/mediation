@@ -19,8 +19,7 @@ import com.hp.hpl.jena.sparql.algebra.Algebra;
 import com.hp.hpl.jena.sparql.algebra.Op;
 import com.hp.hpl.jena.sparql.algebra.Transform;
 import com.hp.hpl.jena.sparql.algebra.Transformer;
-import com.hp.hpl.jena.sparql.expr.E_Add;
-import com.hp.hpl.jena.sparql.expr.NodeValue;
+
 
 public class InternalKettleExample {
 
