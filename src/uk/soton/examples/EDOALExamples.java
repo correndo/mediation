@@ -77,7 +77,7 @@ public class EDOALExamples {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		AlignmentParser parser = new AlignmentParser(2);
+		AlignmentParser parser = new AlignmentParser(0);
 		parser.initAlignment(null);
 		try {
 			a = EDOALMediator.mediate(parser.parse("file:./resources/wineexample.xml"));
