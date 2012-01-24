@@ -94,7 +94,11 @@
 			<classpath refid="mediation.classpath" />
 		</java>
 	</target>
-
+	<target name="select-example">
+			<java classname="uk.soton.examples.EDOALKettleExample" fork="true">
+				<classpath refid="mediation.classpath" />
+			</java>
+		</target>
 	<target name="jar" depends="build" description="Build the distribution .jar file">
 	</target>
 
