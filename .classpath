@@ -16,11 +16,11 @@
 	<classpathentry kind="lib" path="lib/wstx-asl-3.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="lib/ontowrap.jar"/>
-	<classpathentry kind="lib" path="lib/procalign.jar" sourcepath="/Users/gc3/Development/java/align-4.2/src"/>
-	<classpathentry kind="lib" path="lib/align.jar"/>
+	<classpathentry kind="lib" path="lib/procalign.jar" sourcepath="/Users/gc3/Development/java/alignapi/trunk/src"/>
+	<classpathentry kind="lib" path="lib/align.jar" sourcepath="/Users/gc3/Development/java/alignapi/trunk/src"/>
 	<classpathentry kind="lib" path="lib/alignapi.jar"/>
 	<classpathentry kind="lib" path="lib/jenatest.jar"/>
 	<classpathentry kind="lib" path="lib/arq-extra.jar"/>
-	<classpathentry kind="lib" path="lib/arq.jar"/>
+	<classpathentry kind="lib" path="lib/arq.jar" sourcepath="/Users/gc3/Development/java/arq-src-2.7.0/src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

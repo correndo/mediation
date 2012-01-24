@@ -19,6 +19,9 @@
  */
 package uk.soton.service.mediation.edoal;
 
+import org.semanticweb.owl.align.AlignmentException;
+import org.semanticweb.owl.align.Visitable;
+
 import com.hp.hpl.jena.graph.Node;
 
 import uk.soton.service.mediation.FunctionalDependency;
@@ -44,5 +47,7 @@ public interface ValueGenerator {
 	 * 
 	 */
 	public FunctionalDependency getFD();
+
+	void visit(Visitable v) throws AlignmentException;
 	
 }

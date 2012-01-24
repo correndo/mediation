@@ -36,15 +36,43 @@ import uk.soton.service.mediation.STriple;
 import com.hp.hpl.jena.graph.Node;
 
 import fr.inrialpes.exmo.align.impl.edoal.Apply;
+import fr.inrialpes.exmo.align.impl.edoal.ClassConstruction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassExpression;
+import fr.inrialpes.exmo.align.impl.edoal.ClassId;
+import fr.inrialpes.exmo.align.impl.edoal.ClassOccurenceRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassTypeRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassValueRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.Datatype;
+import fr.inrialpes.exmo.align.impl.edoal.Expression;
+import fr.inrialpes.exmo.align.impl.edoal.InstanceExpression;
+import fr.inrialpes.exmo.align.impl.edoal.InstanceId;
+import fr.inrialpes.exmo.align.impl.edoal.PathExpression;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyConstruction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyExpression;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyId;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyTypeRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyValueRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationCoDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationConstruction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationExpression;
+import fr.inrialpes.exmo.align.impl.edoal.RelationId;
+import fr.inrialpes.exmo.align.impl.edoal.RelationRestriction;
 import fr.inrialpes.exmo.align.impl.edoal.Transformation;
+import fr.inrialpes.exmo.align.impl.edoal.Value;
 import fr.inrialpes.exmo.align.impl.edoal.ValueExpression;
+import fr.inrialpes.exmo.align.impl.edoal.EDOALVisitor;
 
 /**
  * The TransformationVisitor class implements the AlignmentVisitor interface and produces RewritingRule instances.
  * 
  * @author Gianluca Correndo <gc3@ecs.soton.ac.uk>
  */
-public class TransformationVisitor implements AlignmentVisitor, RewritingRuleGenerator{
+public class TransformationVisitor implements EDOALVisitor, RewritingRuleGenerator{
 
 	/**
 	 * The field lmr is the intermediate mediation result for the LHS
@@ -66,6 +94,8 @@ public class TransformationVisitor implements AlignmentVisitor, RewritingRuleGen
 	 */
 	private boolean forward = true;
 	
+    private static FDInverter inverter = FDInverterImpl.getDefaultInstance();
+
 	
 	public TransformationVisitor(){
 		this.lmr = new MediationResult();
@@ -81,19 +111,19 @@ public class TransformationVisitor implements AlignmentVisitor, RewritingRuleGen
 	/* (non-Javadoc)
 	 * @see org.semanticweb.owl.align.AlignmentVisitor#init(java.util.Properties)
 	 */
-	@Override
+	/*@Override
 	public void init(Properties arg0) {
 		// NOOP		
-	}
+	}*/
 
 	/* (non-Javadoc)
 	 * @see org.semanticweb.owl.align.AlignmentVisitor#visit(org.semanticweb.owl.align.Visitable)
 	 */
-	@Override
+	/*@Override
 	public void visit(Visitable t) throws AlignmentException {
 		if (t instanceof Transformation) this.visit((Transformation)t);
 		else Logger.getAnonymousLogger().log(Level.WARNING,	"Class not handled yet:" + t.getClass());
-	}
+	}*/
 	
 	/**
 	 * The visit method visit the Transformation structure and generate the RewritingRule that implements the Transformation.
@@ -121,6 +151,11 @@ public class TransformationVisitor implements AlignmentVisitor, RewritingRuleGen
 		reifyFD(vf.getFD() , s); //(s x1 v1) AND y = f(v1,x2,..,xn) for each xi (actually only one property is allowed right now because of the limitation of the rules
 		if (vf.getFD() != null && lmr.getPatterns().size() > 0 && rmr.getPatterns().size() > 0 ){
 			this.lmr.getFD().add(vf.getFD());
+			//Add invert function
+			FunctionalDependency i = inverter.invert(vf.getFD());
+			if (i != null){
+				this.lmr.getFD().add(i);
+			}
 			this.rr.setLHS(lmr.getPatterns().asTripleList().get(0)).setRHS(this.rmr.getPatterns().asTripleList()).setFD(lmr.getFD());
 		} else {
 			this.rr = null;
@@ -173,6 +208,180 @@ public class TransformationVisitor implements AlignmentVisitor, RewritingRuleGen
 	@Override
 	public boolean isForward() {
 		return this.forward;
+	}
+
+	@Override
+	public void visit(PathExpression o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(Expression o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassExpression o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassId o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassConstruction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassTypeRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassDomainRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassValueRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ClassOccurenceRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(PropertyExpression o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(PropertyId o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(PropertyConstruction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(PropertyRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(PropertyDomainRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(PropertyTypeRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(PropertyValueRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(RelationExpression o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(RelationId o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(RelationConstruction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(RelationRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(RelationDomainRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(RelationCoDomainRestriction o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(InstanceExpression o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(InstanceId o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(ValueExpression o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(Value o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(Apply o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visit(Datatype o) throws AlignmentException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

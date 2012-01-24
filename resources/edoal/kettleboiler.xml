@@ -71,7 +71,7 @@
 							<edoal:arguments rdf:parseType="Collection">
 								<edoal:Property rdf:about="&target;temp" />
 								<!-- JE: maybe it can also be typed with edoal:type="" not sure -->
-								<edoal:Literal edoal:string="273.15" />
+								<edoal:Literal edoal:type="&xsd;double" edoal:string="273.15" />
 							</edoal:arguments>
 						</edoal:Apply>
 					</edoal:entity2>
@@ -83,7 +83,7 @@
 					<edoal:Apply edoal:operator="&fn;sum">
 							<edoal:arguments rdf:parseType="Collection">
 								<edoal:Property rdf:about="&source;hasTemperature" />
-								<edoal:Literal edoal:string="273.15" />
+								<edoal:Literal edoal:type="&xsd;double" edoal:string="273.15" />
 							</edoal:arguments>
 						</edoal:Apply>
 					</edoal:entity1>

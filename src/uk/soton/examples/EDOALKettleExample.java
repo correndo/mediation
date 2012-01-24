@@ -10,6 +10,7 @@ import uk.soton.service.mediation.algebra.EntityTranslation;
 import uk.soton.service.mediation.algebra.ExtendedOpAsQuery;
 import uk.soton.service.mediation.edoal.EDOALMediator;
 
+import com.hp.hpl.jena.query.ARQ;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.Syntax;
@@ -40,11 +41,14 @@ public class EDOALKettleExample {
 			m.write(System.out, "Turtle");
 			String querys = "PREFIX source:    <http://correndo.ecs.soton.ac.uk/ontology/source#>"
 					+ "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+					+ "PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>"
 					+ "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>"
 					+ "PREFIX owl:   <http://www.w3.org/2002/07/owl#>"
-					+ "SELECT DISTINCT ?v ?y ?z WHERE { "
+					+ "SELECT DISTINCT ?v ?y ?z ?w WHERE { "
 					+ "           ?v a source:Person ; source:hasKettle ?y . " 
-					+ "           ?y source:hasTemperature ?z.} LIMIT 10";
+					+ "           ?z source:hasTemperature ?w."
+					+ "           ?y source:hasTemperature \"100\"^^xsd:double.} LIMIT 10";
+			ARQ.setNormalMode();
 			Query query = QueryFactory.create(querys, Syntax.syntaxARQ);
 			Op op = Algebra.compile(query);
 			EntityTranslationService ets = new EntityTranslationServiceImpl();

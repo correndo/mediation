@@ -34,11 +34,36 @@ import com.hp.hpl.jena.datatypes.TypeMapper;
 import com.hp.hpl.jena.graph.Node;
 
 import fr.inrialpes.exmo.align.impl.edoal.Apply;
+import fr.inrialpes.exmo.align.impl.edoal.ClassConstruction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassExpression;
+import fr.inrialpes.exmo.align.impl.edoal.ClassId;
+import fr.inrialpes.exmo.align.impl.edoal.ClassOccurenceRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassTypeRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.ClassValueRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.Datatype;
+import fr.inrialpes.exmo.align.impl.edoal.Expression;
+import fr.inrialpes.exmo.align.impl.edoal.InstanceExpression;
 import fr.inrialpes.exmo.align.impl.edoal.InstanceId;
+import fr.inrialpes.exmo.align.impl.edoal.PathExpression;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyConstruction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyExpression;
 import fr.inrialpes.exmo.align.impl.edoal.PropertyId;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyTypeRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.PropertyValueRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationCoDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationConstruction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationDomainRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.RelationExpression;
 import fr.inrialpes.exmo.align.impl.edoal.RelationId;
+import fr.inrialpes.exmo.align.impl.edoal.RelationRestriction;
+import fr.inrialpes.exmo.align.impl.edoal.Transformation;
 import fr.inrialpes.exmo.align.impl.edoal.Value;
 import fr.inrialpes.exmo.align.impl.edoal.ValueExpression;
+import fr.inrialpes.exmo.align.impl.edoal.EDOALVisitor;
 
 
 /**
@@ -46,7 +71,7 @@ import fr.inrialpes.exmo.align.impl.edoal.ValueExpression;
  * 
  * @author Gianluca Correndo <gc3@ecs.soton.ac.uk>
  */
-public class ValueVisitor implements AlignmentVisitor , ValueGenerator{
+public class ValueVisitor implements EDOALVisitor , ValueGenerator{
 
 	/**
 	 * The field fd is the FunctionalDependency instance
@@ -64,17 +89,16 @@ public class ValueVisitor implements AlignmentVisitor , ValueGenerator{
 	/* (non-Javadoc)
 	 * @see org.semanticweb.owl.align.AlignmentVisitor#init(java.util.Properties)
 	 */
-	@Override
-	public void init(Properties arg0) {
+	//@Override
+	/*public void init(Properties arg0) {
 		// TODO Auto-generated method stub
-	}
+	}*/
 
 	/**
 	 * The visit is redirected based on the type of the input object visited.
 	 * @see org.semanticweb.owl.align.AlignmentVisitor#visit(org.semanticweb.owl.align.Visitable)
 	 */
-	@Override
-	public void visit(Visitable v) throws AlignmentException {
+	private void innerVisit(Object v) throws AlignmentException {
 		if (v instanceof InstanceId) visit((InstanceId) v);
 		else if (v instanceof Value) visit((Value) v);
 		else if (v instanceof Apply) visit((Apply) v);
@@ -98,6 +122,7 @@ public class ValueVisitor implements AlignmentVisitor , ValueGenerator{
 			args.add(vv.getValue());			
 		}
 		this.fd = new FunctionalDependency(this.value , null , args , v.getOperation().toString());
+		//TODO - lookup function here
 	}
 
 	/**
@@ -173,5 +198,160 @@ public class ValueVisitor implements AlignmentVisitor , ValueGenerator{
 	 */
 	static public ValueVisitor $(){
 		return new ValueVisitor();
+	}
+
+	@Override
+	public void visit(PathExpression o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(Expression o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassExpression o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassId o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassConstruction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassTypeRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassDomainRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassValueRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ClassOccurenceRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(PropertyExpression o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(PropertyConstruction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(PropertyRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(PropertyDomainRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(PropertyTypeRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(PropertyValueRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(RelationExpression o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(RelationConstruction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(RelationRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(RelationDomainRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(RelationCoDomainRestriction o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(InstanceExpression o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(Transformation o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(ValueExpression o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(Datatype o) throws AlignmentException {
+		innerVisit(o);				
+		
+	}
+
+	@Override
+	public void visit(Visitable v) throws AlignmentException {
+		innerVisit(v);						
 	}
 }

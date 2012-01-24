@@ -459,9 +459,12 @@ public class JenaAlignment implements Alignment {
 					params.add(this.getR(p.getURI()));
 				if (p.isBlank())
 					params.add(this.getA(p.getBlankNodeId()));
-				if (p.isLiteral())
-					params.add(p.getLiteralValue());
-				// params.add(p);
+				if (p.isLiteral()){
+					//Node n = Node.createLiteral(p.getLiteralValue().toString(), p.getLiteralLanguage(), p.getLiteralDatatype());
+					RDFNode n = this.inner.createTypedLiteral(p.getLiteralValue().toString(), p.getLiteralDatatype());
+					params.add(n);
+				}
+					
 			}
 			this.inner
 					.getGraph()

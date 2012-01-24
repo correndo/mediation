@@ -52,5 +52,10 @@ public class FunctionWrapper implements Function {
 			return ((ExprFunction2)this.inner).copy(args.get(0),args.get(1));
 		} else return null;
 	}
+	
+	@Override
+	public String toString(){
+		return this.inner.getClass().toString();
+	}
 
 }

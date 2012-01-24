@@ -49,7 +49,7 @@ import fr.inrialpes.exmo.align.impl.edoal.Transformation;
 public class EDOALMediator {
 
   private static Logger log = Logger.getLogger(EDOALMediator.class.getName());
-
+  
 
   /**
    * Mediate an EDOAL alignment into an internal alignment based on RDF pattern rewriting rules.

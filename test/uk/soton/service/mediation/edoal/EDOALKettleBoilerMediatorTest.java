@@ -31,7 +31,7 @@ public class EDOALKettleBoilerMediatorTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		AlignmentParser parser = new AlignmentParser(2);
+		AlignmentParser parser = new AlignmentParser(1);
 		parser.initAlignment(null);
 		org.semanticweb.owl.align.Alignment al;
 		try {

@@ -22,6 +22,8 @@ package uk.soton.service.mediation;
 import com.hp.hpl.jena.graph.Node;
 //import com.hp.hpl.jena.sparql.function.Function;
 import uk.soton.service.mediation.algebra.Function;
+import uk.soton.service.mediation.algebra.FunctionWrapper;
+
 import java.util.List;
 
 /**
@@ -104,7 +106,7 @@ public class FunctionalDependency {
 	 */
   @Override
   public String toString() {
-    String result = var.getClass().toString() + ":" + var.getName() + " = " + this.func.getClass().toString() + "(";
+    String result = var.getName() + " = " + this.func.toString() + "(";
     for (Node p : this.param) {
       result += nr(p) + ",";
     }
