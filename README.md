@@ -1,6 +1,4 @@
-=================
-Mediation toolkit
-=================
+# Mediation toolkit
 
 It's a lightweight toolkit to implement ontological mediation over RDF.
 It uses ontology mappings in order to rewrite SPARQL SELECT queries and to generate SPARQL CONSTRUCT queries to import an external data set.
@@ -19,6 +17,7 @@ The tool is divided in the following packages:
 [edoal]: http://alignapi.gforge.inria.fr/edoal.html 
 
 The ontology alignments are represented as RDF files and describe rewriting rules that allows to define class mappings:
+```
 
 	[]    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
               <http://ecs.soton.ac.uk/om.owl#Alignment> ;
@@ -48,9 +47,11 @@ The ontology alignments are represented as RDF files and describe rewriting rule
                                   _:b1
                         ]
               ] ;
-              
+```          
+
 ...property mappings:
 
+```
       <http://ecs.soton.ac.uk/om.owl#hasEntityAlignment>
               [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
                         <http://ecs.soton.ac.uk/om.owl#EntityAlignment> ;
@@ -77,9 +78,11 @@ The ontology alignments are represented as RDF files and describe rewriting rule
                                   _:b3
                         ]
               ] ;
-              
+```
+
 ...and data manipulation:
 
+```
       <http://ecs.soton.ac.uk/om.owl#hasEntityAlignment>
               [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
                         <http://ecs.soton.ac.uk/om.owl#EntityAlignment> ;
@@ -122,12 +125,12 @@ The ontology alignments are represented as RDF files and describe rewriting rule
                                   _:b6
                         ]
               ] ;
-              
+```              
               
  Once loaded an alignment the tool allows to rewrite a SPARQL SELECT query in order to fit a given schema:
  
  [kettle-boiler] original query:
- 
+``` 
 	PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 	PREFIX  source: <http://correndo.ecs.soton.ac.uk/ontology/source#>
 	PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
@@ -140,9 +143,11 @@ The ontology alignments are represented as RDF files and describe rewriting rule
 	?y source:hasTemperature 10 .
 	?l source:hasTemperature ?lt .
 	} LIMIT   10
+```
 
 [kettle-boiler] translated query:
 
+```
 	SELECT DISTINCT  ?v ?y ?z ?lt
 	WHERE
 	{ ?v   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://correndo.ecs.soton.ac.uk/ontology/target#User> ;
@@ -152,3 +157,4 @@ The ontology alignments are represented as RDF files and describe rewriting rule
 	?l  <http://correndo.ecs.soton.ac.uk/ontology/target#temp>  ?_12 .
 	LET (?lt := ( ?_12 - 273.15 ))
 	} LIMIT   10
+```	
